@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 2. Задача на базовые операции. </title>		
+	</head>
+	<body>
+		<h1> 2. Задача на базовые операции. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит сумму в рублях в формате xxx.xx, программа переводит её в доллары. <br>
+			Программа будет доверять пользователю, и не будет производить дополнительную проверку входных данных. 
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+print("Первый способ:")
+KURS = 70.00                                                    # пишем большими буквами, будем считать переменную неизменной константой
+amount_rub = float(input("Введите сумму в рублях: "))           # преобразуем строку во float на входе
+amount_usd = amount_rub / KURS          
+print(round(amount_usd, 2), "usd")                              # округляем результат в американском стиле (до чётного числа)                        
+		</pre>
+		<hr>
+			<pre>
+print("Второй способ:")
+KURS = 70.00
+amount_rub = float(input("Введите сумму в рублях: "))
+print(round((amount_rub / KURS), 2), "usd")                     # здесь записаны все действия с переменными прямо в функции "print"
+			</pre>
+	</body>
+</html>

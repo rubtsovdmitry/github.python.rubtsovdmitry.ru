@@ -1,0 +1,9 @@
+* { margin:0px; }
+.begin_end { font-size: 26px; background: #27ef4c; } 
+hr { width: 99%; margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px; }
+.div_destination { font-size: 30px; text-align: center; }
+nav { border: 1px dotted gray; width: 24.5%; height: 2250px; margin-left: 0.5%; float: left; }
+.ul_empty { list-style-type: square; font-size: 18px; font-weight: bold; }
+a { color: black; font-weight: normal; font-size: 18px; }
+.list_task { border: 1px dotted gray; width: 74%; height: 2250px; margin-left: 0.5%; }
+.git { color: black; font-weight: bold; font-size: 26px; }

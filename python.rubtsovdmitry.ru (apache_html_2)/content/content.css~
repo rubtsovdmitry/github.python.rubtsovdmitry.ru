@@ -1,0 +1,8 @@
+* { margin:0px; }
+h1 { font-size: 18px; }
+.list { border: 1px dotted gray; width: 24.5%; height: 2215px; margin-left: 0.5%; margin-top: 5px; float: left; }
+a:link { color: black; font-size: 18px; }
+a:visited { color: black; font-size: 18px; }
+span { font-weight: bold; font-size: 18px; }
+.task { border: 1px dotted gray; width: 68%; height: 2215px; margin-left: 0.5%; margin-top: 5px; }
+.span_down { vertical-align: sub;font-size: 10px; }
