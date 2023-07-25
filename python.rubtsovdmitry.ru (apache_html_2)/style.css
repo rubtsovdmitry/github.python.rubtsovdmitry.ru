@@ -1,7 +1,7 @@
 * { margin:0px; }
-.begin_end { font-size: 26px; background: #27ef4c; } 
+.begin_end { font-size: 26px; background: #caff63; } 
 hr { width: 99%; margin-left: auto; margin-right: auto; margin-top: 15px; margin-bottom: 15px; }
-.div_destination { font-size: 30px; text-align: center; background-color: #27ef4c; }
+.div_destination { font-size: 30px; text-align: center; background-color: #caff63; }
 nav { border: 1px dotted gray; width: 24.5%; height: 2250px; margin-left: 0.5%; float: left; background-color: #ffd09b; }
 .ul_empty { list-style-type: square; font-size: 18px; font-weight: bold; }
 a { color: black; font-weight: normal; font-size: 18px; }
