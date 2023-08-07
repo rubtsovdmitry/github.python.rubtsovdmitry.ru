@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 1. Задачи на циклы for. </title>		
+	</head>
+	<body>
+		<h1> 1. Задачи на циклы for. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Вывести на экран все числа от 25 до 70 не включительно, посчитать их сумму.						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# первый вариант
+
+diapazon = range(25, 70)
+for i in diapazon:
+    print(i)
+    
+print()
+print("Сумма всех чисел дипазона равна:", sum(diapazon))
+		</pre>
+		<hr>
+		<pre>
+# второй вариант
+
+diapazon = range(25, 70)
+amount = 0
+
+for i in diapazon:
+    amount += i
+    print(i)
+    
+print()
+print("Сумма всех чисел дипазона равна:", amount)		
+		</pre>				
+	</body>
+</html>

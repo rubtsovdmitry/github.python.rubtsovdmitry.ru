@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 2. Задачи на циклы for. </title>		
+	</head>
+	<body>
+		<h1> 2. Задачи на циклы for. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Вывести все числа от 20 до 100, которые делятся на 5.						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# первый вариант
+
+diapazon = range(20, 101)
+for i in diapazon:
+    if i % 5 == 0:
+        print(i)
+		</pre>
+		<hr>
+		<pre>
+# второй вариант
+
+diapazon = range(20, 101)
+result = [i for i in diapazon if i % 5 == 0]    # пока ещё темы списков не было, забегая вперёд, вот такое решение (для списков своя запись для циклов с условием)
+print(result)
+		</pre>
+	</body>
+</html>
