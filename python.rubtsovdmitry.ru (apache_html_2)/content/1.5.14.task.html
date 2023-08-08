@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 14. Палиндромы. </title>		
+	</head>
+	<body>
+		<h1> 14. Палиндромы. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			То же самое, что и в прошлой задаче но про целое предложение, например: <br>
+			• “Кит на море - не романтик!” <br>
+			• “А роза упала на лапу Азора” <br>
+			При этом знаки препинания, пробелы и регистр самого текста нужно игнорировать.					
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+proposal = input("Введите текст: ")
+
+# приведем текст в порядок, удалив из него лишнее и сделав одинаковый регистр
+proposal = proposal.replace(" ", "")
+proposal = proposal.replace("-", "")
+proposal = proposal.replace("!", "")
+proposal = proposal.replace(".", "")
+proposal = proposal.lower()
+
+print("Предложение палиндром") if proposal == proposal[::-1] else print("Предложение не палиндром")
+		</pre>														
+	</body>
+</html>
