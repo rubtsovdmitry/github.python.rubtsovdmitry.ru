@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 13. Факториалы. </title>		
+	</head>
+	<body>
+		<h1> 13. Факториалы. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Составить словарь, где ключ - это целое число (от 1 до 30 включительно), а значение - это факториал этого числа <br>
+			1!  = 1 <br>
+			2!  = 1×2 <br>
+			5!  = 1×2×3×4×5 <br>
+			10! = 1×2×3×...×9×10 = 9!×10 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод константы
+NUMBER = 30
+
+# создание range, кот. будем обходить в цикле
+work_range = range(1, NUMBER + 1)
+
+result_dict = dict()                                    # этот словарь будем заполнять готовыми результатами
+composition = 1                                         # первое значение, кот. соответствует для 1 всегда равно 1
+for i in work_range:                                    # обойдём в цикле все числа в range
+    composition *= i                                    # считаем новое произведение факториала
+    result_dict[(str(i) + "!")] = composition           # создаём ключ в словаре со значением переменной "composition"
+print()
+
+for i in result_dict.items():                           # выведем пары ключ-значения результатирующего словаря в цикле
+    print(i)
+		</pre>				
+	</body>
+</html>
