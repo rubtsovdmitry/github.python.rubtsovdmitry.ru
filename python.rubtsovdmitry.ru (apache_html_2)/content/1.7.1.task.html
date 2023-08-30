@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 1. Случайная строка. </title>		
+	</head>
+	<body>
+		<h1> 1. Случайная строка. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Создать в блокноте текстовый файл из нескольких строк (вручную, можно написать туда что угодно) и сохранить. <br> 
+			В программе открыть этот файл ф-ией open(), получить строки командой readlines(). Вывести на экран случайную строку из этого файла.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random as rd
+
+a = open("./1.7.1.txt")                 # прочитаем в буфер текстовый файл
+s = a.readlines()                       # создадим список строк
+s = [i.strip() for i in s]              # уберём пробелы, табуляции, перенос строк 
+print(s)
+print()
+
+# теперь выведем случайную строку, по сути случайный элемент из списка
+number_str = rd.randint(0, (len(s) - 1))
+print(s[number_str])
+		</pre>						
+	</body>
+</html>

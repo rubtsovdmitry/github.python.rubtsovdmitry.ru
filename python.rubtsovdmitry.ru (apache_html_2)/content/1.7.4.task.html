@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 4. Задачи на функции. </title>		
+	</head>
+	<body>
+		<h1> 4. Задачи на функции. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Написать функцию, которая переводит метры в дюймы и обратно. 1 дюйм = 0.0254м.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def perevod_m_in_inch(i):                                               # i - это аргумент для функции, см. ниже 
+    M_IN_INCH = 0.0254                                                  # константа, кол-во дюймов в метре
+    m = i * M_IN_INCH                                                   # формула расчёта количества метров в дюймах
+    return m                                                            # указатель, на переменную, кот. возвращает функция
+
+
+a = perevod_m_in_inch(float(input("Введите количество дюймов: ")))      # в скобках находится аргумент - float. Сама переменная - это результат расчёта нашей функции
+print("Перевод дюймов в метры равен", a, "м")
+print()
+
+##########################
+
+
+def perevod_inch_in_m(i):                                                
+    M_IN_INCH = 0.0254                                                
+    m = i / M_IN_INCH                                             
+    return m                                                    
+
+
+a = perevod_inch_in_m(float(input("Введите количество метров: ")))        
+print("Перевод метров в дюймы равен", a, "дюймов")
+		</pre>						
+	</body>
+</html>
