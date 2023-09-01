@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 11. Сувениры и безделушки. </title>		
+	</head>
+	<body>
+		<h1> 11. Сувениры и безделушки. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Интернет-магазин занимается продажей различных сувениров и безделушек. Каждый сувенир весит 75 г, а безделушка – 112 г. <br>
+			Напишите программу, запрашивающую у пользователя количество тех и других покупок, после чего выведите на экран общий вес посылки.						
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+S_weight = 75
+T_weight = 112
+souvenirs = int(input("%33s" % "Введите количество сувениров: "))           # выделим 33em под строку
+trinkets = int(input("%33s" % "Введите количество безделушек: "))
+total_weight = S_weight * souvenirs + T_weight * trinkets
+print("%32s" % "Общий вес посылки в граммах:", total_weight)                # здесь выделение 32em (print даёт 1em)
+		</pre>		
+	</body>
+</html>
