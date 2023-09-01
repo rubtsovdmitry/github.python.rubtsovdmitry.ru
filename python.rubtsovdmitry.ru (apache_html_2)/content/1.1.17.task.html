@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 17. Площадь и объем. </title>		
+	</head>
+	<body>
+		<h1> 17. Площадь и объем (в коде есть строки из следующих тем: "модули"). </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Напишите программу, которая будет запрашивать у пользователя радиус и сохранять его в переменной r. После этого она должна вычислить площадь круга с заданным радиусом и объем шара с тем же радиусом. Используйте в своих вычислениях константу pi из модуля math. <br>
+			Площадь круга вычисляется по формуле area = π * (r ** 2), а объем шара – по формуле volume = 4 / 3 * π * (r ** 3).							
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from math import pi                         # подключение дополнительной константы из модуля math
+print()
+
+r = float(input("Введите радиус: "))        # ввод радиуса без единиц измерения                                                                                                
+
+area = pi * r ** 2                          # формула для площади круга
+volume = 4 / 3 * pi * r ** 3                # формула для объёма шара
+
+print(area)
+print(volume)
+		</pre>		
+	</body>
+</html>
