@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="content.css">		
+		<title> 10. Текущее время. </title>		
+	</head>
+	<body>
+		<h1> 10. Текущее время. </h1>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Модуль time в Python включает в себя несколько очень полезных функций для работы со временем. Одна из таких функций – asctime – считывает текущее системное время компьютера и возвращает его в удобном для восприятия виде. Используйте эту функцию для отображения на экране текущей даты и времени.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from time import asctime                # загружает функцию текущего времени из модуля time
+
+print("Текущее время\n")
+print(asctime())
+		</pre>						
+	</body>
+</html>
