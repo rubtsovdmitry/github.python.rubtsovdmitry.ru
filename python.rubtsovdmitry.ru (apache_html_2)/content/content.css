@@ -5,4 +5,4 @@ a { color: black; font-size: 18px; }
 span { font-weight: bold; font-size: 18px; }
 .task { border: 1px dotted gray; width: 68%; height: 2215px; margin-left: 0.5%; margin-top: 5px; }
 .span_down { vertical-align: sub;font-size: 10px; }
-.link_task { background-color: #ffd09b; font-size: 15px; }
+.link_task { background-color: #ff8b6a; font-size: 15px; }

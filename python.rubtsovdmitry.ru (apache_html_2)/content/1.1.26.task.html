@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<h1> 26. Когда католическая Пасха? (в коде есть строки из следующих тем: "строки, модули, функции").  </h1>
+		<div> <a class="link_task" href="./1.1.26.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
 		<hr>
 		<div> 
 			<span> Условие: </span> <br>
@@ -67,6 +68,8 @@ def pasxa(year):                                                                
     date = pasxa_2(year, month, day)    
     date = f"Пасха приходится на {date}"     
     return date
+    
+    
 try:
     year = int(input("Введите год и программа определит, когда Пасха? Год: "))
     print(pasxa(year))    
