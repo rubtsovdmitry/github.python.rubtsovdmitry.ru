@@ -34,9 +34,9 @@
 def tww(temperature_air, speed_wind):
     TEMPERATURE = 10
     WIND = 4.8
-    if temperature_air > TEMPERATURE or speed_wind <= WIND:
+    if temperature_air > TEMPERATURE or speed_wind &lt;= WIND:
         temperature_air = round(temperature_air, 2)
-    elif temperature_air <= TEMPERATURE and speed_wind > WIND:
+    elif temperature_air &lt;= TEMPERATURE and speed_wind > WIND:
         temperature_air = round((13.12 + (0.6215 * temperature_air) - 11.37 * (speed_wind ** 0.16) + 0.3965 * temperature_air * (speed_wind ** 0.16)), 2)
     return temperature_air
 
