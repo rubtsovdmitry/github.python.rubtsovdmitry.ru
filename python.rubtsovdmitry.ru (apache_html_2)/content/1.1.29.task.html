@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 29. Сумма цифр в числе. </title>		
+	</head>
+	<body>
+		<h1> 29. Сумма цифр в числе. </h1>
+		<div> <a class="link_task" href="./1.1.29.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Разработайте программу, запрашивающую у пользователя положительное целое четырехзначное число и подсчитывающую сумму составляющих его цифр. Например, если пользователь введет число 3141, программа должна вывести 9.
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+digit = int(input("Введите положительное целое четырехзначное число, например 3141: "))
+amount = 0
+amount = digit % 10
+digit //= 10
+amount += digit % 10
+digit //= 10
+amount += digit % 10
+digit //= 10
+amount += digit % 10
+print("Сумма всех чисел равна", amount)
+		</pre>		
+	</body>
+</html>

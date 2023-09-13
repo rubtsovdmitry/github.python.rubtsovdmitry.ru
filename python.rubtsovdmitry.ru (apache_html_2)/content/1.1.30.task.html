@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 30. Сортировка трех чисел. </title>		
+	</head>
+	<body>
+		<h1> 30. Сортировка трех чисел. </h1>
+		<div> <a class="link_task" href="./1.1.30.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Напишите программу, запрашивающую у пользователя три целых числа и выводящую их в упорядоченном виде – по возрастанию. Используйте функции min и max для нахождения наименьшего и наибольшего значений.
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+digit1 = int(input("Введите первое число: "))
+digit2 = int(input("Введите второе число: "))
+digit3 = int(input("Введите третье число: "))
+digit_max = max(digit1, digit2, digit3)
+digit_min = min(digit1, digit2, digit3)
+digit_third = digit1 + digit2 + digit3 - digit_max - digit_min
+print("Числа в порядке возрастания:", "%15i%15i%15i" % (digit_min, digit_third, digit_max))
+		</pre>		
+	</body>
+</html>
