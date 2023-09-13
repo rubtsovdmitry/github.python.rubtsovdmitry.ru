@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 28. Температура с учетом ветра. </title>		
+	</head>
+	<body>
+		<h1> 28. Температура с учетом ветра. </h1>
+		<div> <a class="link_task" href="./1.1.28.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Когда в прохладный день еще и дует ветер, 
+			температура кажется более низкой, чем есть на самом деле, 
+			поскольку движение воздушных масс способствует более быстрому охлаждению теплых предметов, 
+			к коим в данном случае можно отнести и человека. 
+			Этот эффект известен как охлаждение ветром. <br>
+			В 2001 году Канада, Великобритания и США договорились об использовании общей формулы для определения коэффициента охлаждения ветром. 
+			В формуле, приведенной ниже, Ta – это температура воздуха в градусах Цельсия, а V – скорость ветра в километрах в час: <br>
+			WCI = 13,12 + 0,6215 * Ta - 11,37 * (V ** 0,16) + 0,3965 * Ta * (V ** 0,16). <br> 
+			Принято считать, что коэффициент охлаждения ветром допустимо рассчитывать при температурах, меньших или равных 10 °С, и скорости ветра, превышающей 4,8 км/ч.
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def tww(temperature_air, speed_wind):
+    TEMPERATURE = 10
+    WIND = 4.8
+    if temperature_air > TEMPERATURE or speed_wind <= WIND:
+        temperature_air = round(temperature_air, 2)
+    elif temperature_air <= TEMPERATURE and speed_wind > WIND:
+        temperature_air = round((13.12 + (0.6215 * temperature_air) - 11.37 * (speed_wind ** 0.16) + 0.3965 * temperature_air * (speed_wind ** 0.16)), 2)
+    return temperature_air
+
+
+try:
+    temperature_air = float(input("Введите температуру в градусах цельсия: "))
+    speed_wind = float(input("Введите скорость ветра в км/час: "))
+    temperature_with_wind = tww(temperature_air, speed_wind)
+    print("Температура с учетом ветра:", temperature_with_wind)
+except ValueError:
+    print("Ошибка в вводе.")
+		</pre>		
+	</body>
+</html>
