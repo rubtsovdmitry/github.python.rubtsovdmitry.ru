@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 5. Собачий возраст. </title>		
+	</head>
+	<body>
+		<h1> 5. Собачий возраст. </h1>
+		<div> <a class="link_task" href="./1.2.5.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Считается, что один год, прожитый собакой, эквивалентен семи человеческим годам. 
+			При этом зачастую не учитывается, что собаки становятся абсолютно взрослыми уже к двум годам. 
+			Таким образом, многие предпочитают каждый из первых двух лет жизни собаки приравнивать к 10,5 года человеческой жизни, 
+			а все последующие – к четырем. <br> 
+			Напишите программу, которая будет переводить человеческий возраст в собачий с учетом указанной выше логики. 
+			Убедитесь, что программа корректно работает при пересчете возраста собаки меньше и больше двух лет. Также программа должна выводить сообщение об ошибке, если пользователь ввел отрицательное число.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+BORDER = 21                                                                             # заведём переменные в верхнем регистре, т.к. это константы
+FIRST = 10.5                                                                
+SECOND = 4
+
+age = float(input("%50s" % "Введите человеческий возраст в годах: "))
+
+if age &lt; 0:
+    print("%49s" % "Вы ввели отрицательный возраст:", "-")
+elif age == 0:
+    print("%49s" % "Вы ввели ноль:", "-")
+elif age > BORDER:
+    age4year = age - BORDER
+    age4year = (age4year // SECOND) + ((age4year % SECOND) / SECOND)     
+    result = age4year + (BORDER // FIRST)
+    print("%49s" % "Возраст в переводе на собачий:", round(result, 2))
+else:
+    result = (age // FIRST) + (age % FIRST / FIRST)
+    print("%49s" % "Возраст в переводе на собачий составляет:", round(result, 2))
+		</pre>		
+	</body>
+</html>

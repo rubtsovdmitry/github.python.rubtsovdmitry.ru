@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 7. Угадайте фигуру. </title>		
+	</head>
+	<body>
+		<h1> 7. Угадайте фигуру. </h1>
+		<div> <a class="link_task" href="./1.2.7.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите программу, определяющую вид фигуры по количеству ее сторон. 
+			Запросите у пользователя количество сторон и выведите сообщение с указанием вида фигуры. 
+			Программа должна корректно обрабатывать и выводить названия для фигур с количеством сторон от трех до десяти включительно. Если введенное пользователем значение находится за границами этого диапазона, уведомите его об этом.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+quantity = int(input("%50s" % "Введите количество сторон: "))
+
+result = "Введены неверные данные" if quantity &lt; 3 or quantity > 10 else ("Это треугольник" if quantity == 3 else ("Это " + str(quantity) + "-х(ти)-угольник"))
+print("%49s" % result)
+		</pre>		
+	</body>
+</html>

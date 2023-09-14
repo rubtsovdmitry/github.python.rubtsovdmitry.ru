@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 6. Гласные и согласные. </title>		
+	</head>
+	<body>
+		<h1> 6. Гласные и согласные (в коде есть строки из следующих тем: "строки"). </h1>
+		<div> <a class="link_task" href="./1.2.6.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Разработайте программу, запрашивающую у пользователя букву латинского алфавита. 
+			Если введенная буква входит в следующий список (a, e, i, o или u), 
+			необходимо вывести сообщение о том, что эта буква гласная. 
+			Если была введена буква y, программа должна написать, что эта буква может быть как гласной, так и согласной. 
+			Во всех других случаях должно выводиться сообщение о том, что введена согласная буква.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+#################################   1-й способ
+
+letter = input("%50s" % "Введите латинскую букву: ")
+letter = letter.lower()
+
+if letter == "y":
+    print("%49s" % "Эта буква может быть и гласной и согласной.")
+elif letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
+    print("%49s" % "Эта буква гласная.")
+else:
+    print("%49s" % "Эта буква согласная.")
+
+#################################   2-й способ
+
+letter = input("%50s" % "Введите латинскую букву: ")
+letter = letter.lower()
+
+GLAS_SOGLAS = ["y"]
+GLASS = ["a", "e", "i", "o", "u"]
+
+result = "Эта буква может быть и гласной и согласной." if letter in GLAS_SOGLAS else ("Эта буква гласная." if letter in GLASS else "Эта буква согласная.")      # запись вложенного условия в одну строку
+print("%49s" % result)
+		</pre>		
+	</body>
+</html>
