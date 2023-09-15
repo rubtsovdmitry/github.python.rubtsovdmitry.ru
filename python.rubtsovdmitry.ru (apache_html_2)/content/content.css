@@ -6,4 +6,4 @@ span { font-weight: bold; font-size: 18px; }
 .task { border: 1px dotted gray; width: 68%; height: 2215px; margin-left: 0.5%; margin-top: 5px; }
 .span_down { vertical-align: sub;font-size: 10px; }
 .link_task { background-color: #ffd09b; font-size: 15px; }
-.a_marker { background-color: #caff63; }
+.a_marker { color: red; }
