@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 8. Калькулятор. </title>		
+	</head>
+	<body>
+		<h1> 8. Калькулятор. </h1>
+		<div> <a class="link_task" href="./1.7.8.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит 2 числа (float) и знак операции (+, -, *, /, x-англ. или х-русская). Всего 3 input-а, программа считает и выводит результат. Сделать так, чтобы программа не вылетала, что бы пользователь ни ввел.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_calculate(digit1, sign, digit2):                                                                 # сама логика калькулятора
+    if sign == "+":                                                                                         
+        return digit1 + digit2                                                                          # функция выполняется до первого return
+    elif sign == "-":
+        return digit1 - digit2
+    elif sign == "/" and digit2 != 0:
+        return digit1 / digit2
+    elif sign == "/" and digit2 == 0:
+        return " Деление на ноль невозможно."
+    else:
+        return digit1 * digit2
+
+
+# ввод и проверка данных
+digit1_test = ""                                                                                        # создадим переменную для запуска цикла
+digit2_test = ""                                                                                        # создадим переменную для запуска цикла
+sign = ""                                                                                               # создадим переменную для запуска цикла
+SIGN = ("+", "-", "*", "x", "х", "/")                                                                   # создадим константу с набором возможных операций (x - англ., х - русская)
+while digit1_test.isdigit() == False and digit2_test.isdigit() == False:                                # будет работать цикл, пока введённые переменные не будут соответствовать условию
+    try:                                                                                                # проверка ввода для цифр
+        digit1 = float(input("Введите первую цифру (если цифра дробная, то использовать точку): "))        
+        digit2 = float(input("Введите вторую цифру (если цифра дробная, то использовать точку): "))
+    except:
+        print("Одна из цифр, которую Вы ввели не является цифрой.")
+    else:
+        digit1_test = str(int(digit1))          
+        digit2_test = str(int(digit2))          
+while sign not in SIGN:                                                                                 # проверка знака действия 
+    sign = input("Введите знак операции: ")          
+
+result = my_calculate(digit1, sign, digit2)
+print(f'{digit1} {sign} {digit2} = {result}')
+		</pre>						
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Количество дней в месяцах. </title>		
+	</head>
+	<body>
+		<h1> 5. Количество дней в месяцах. </h1>
+		<div> <a class="link_task" href="./1.6.5.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит название месяца в формате jan, feb, mar, …, а программа: <br>
+			• Пишет на экране количество дней в этом месяце. Количество дней в феврале - как в текущем году. <br>
+			• Считает премию сотруднику из расчета 500р на календарный день за указанный месяц. <br>
+			Решить на основе словаря (составить вручную): <br> 
+			days = {'jan': 31, 'feb': 28, …}
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+days = {'january': 31, 'february': 28, 'march': 31, 'april': 30, 'may': 31, 'june': 30, 'july': 31, 'august': 31, 'september': 30, 'october': 31, 'november': 30, 'december': 31}
+money = 500
+
+month = input("Введите название месяца: ")
+print("Количество дней в месяце", days.get(month))                            # здесь идёт обращение к словарю явным образом, если month будет введён с ошибкой, то выведет тип данных None
+print("Премия составит:", (days.get(month) * money), "руб.")        
+		</pre>				
+	</body>
+</html>

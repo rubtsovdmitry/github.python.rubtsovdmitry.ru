@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 8. Количество и сумма цифр в числе (в). </title>		
+	</head>
+	<body>
+		<h1> 8. Количество и сумма цифр в числе (в) <span class="a_marker"> (в коде есть строки из следующих тем: "строки"). </span> </h1>
+		<div> <a class="link_task" href="./1.4.8.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит большое целое число (например, 4568). Программа считает сумму цифр в этом числе (например, 4+5+6+8 для числа 4568).									 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+number = input("Введите большоее целое число: ")
+
+amount = 0
+for i in number:
+    amount += int(i)
+    
+print("Сумма цифр в этом числе равно", amount)
+		</pre>		      
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 7. Подсчёт символов в строке. </title>		
+	</head>
+	<body>
+		<h1> 7. Подсчёт символов в строке. </h1>
+		<div> <a class="link_task" href="./1.6.7.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит строку, программа составляет словарь, где ключ - это символ, значение - это количество этого символа в этой строке. Пример: <br>
+			s = 'Hello' <br>
+			d = {'H': 1, 'e':1, 'l': 2, 'o':1}
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# входные данные
+enter_data = input("Введите строку: ")
+
+# обойдем наш текст в цикле, и если значений цикла нет в новом словаре, то добавляем, если есть, то +1
+result_dict = dict()
+for i in enter_data:
+    if i not in result_dict:
+        result_dict[i] = 1
+    elif i in result_dict:
+        result_dict[i] += 1
+print(result_dict) 
+		</pre>				
+	</body>
+</html>

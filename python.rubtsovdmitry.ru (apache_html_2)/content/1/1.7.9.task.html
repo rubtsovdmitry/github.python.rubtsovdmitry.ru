@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 9. Число Пи. </title>		
+	</head>
+	<body>
+		<h1> 9. Число Пи. </h1>
+		<div> <a class="link_task" href="./1.7.9.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пи = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 ...) <br>
+			В формуле в скобках бесконечность. Программа будет спрашивать максимальное число в знаменателе слагаемых и вычитаемых чисел (этим мы определим точность расчёта). <br>
+			Нужно посчитать число Пи и вывести сколько времени на это понадобилось.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import time                                                                                                                              
+
+def my_function_pi(tochnost):
+    v_skobkax = 1
+    first_3 = 3
+    first_5 = 5
+    while first_3 &lt;= tochnost or first_5 &lt;= tochnost:
+        v_skobkax = v_skobkax - 1 / first_3 + 1 / first_5
+        first_3 += 4
+        first_5 += 4
+    digit_pi = 4 * v_skobkax
+    return digit_pi
+
+    
+print()
+tochnost = input("Введите максимальное число в знаменателе слагаемых и вычитаемых чисел (этим мы определим точность расчёта) ")
+try:
+    tochnost = int(tochnost)
+    print(f"Максимальное число точности: {tochnost:,}")
+    t1 = time.time()
+    digit_pi = my_function_pi(tochnost)
+    t2 = time.time()
+    print("Число ПИ равно:", digit_pi)
+    print("Время на вычисление в секундах равно", (t2 - t1))
+except:
+    print("Вы ввели не число")
+		</pre>						
+	</body>
+</html>

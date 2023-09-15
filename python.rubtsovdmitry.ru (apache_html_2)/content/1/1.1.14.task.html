@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 14. Потребление топлива. </title>		
+	</head>
+	<body>
+		<h1> 14. Потребление топлива. </h1>
+		<div> <a class="link_task" href="./1.1.14.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			В США потребление автомобильного топлива исчисляется в милях на галлон (miles-per-gallon – MPG). В то же время в Канаде этот показатель обычно выражается в литрах на 100 км (liters-per-hundred kilometers – L/100 km). <br> 
+			1,609 км в 1 миле. 3,785 л в одном галлоне. <br>  
+			Напишите программу, запрашивающую у пользователя показатель потребления топлива автомобилем в американских единицах и выводящую его на экран в канадских единицах.						
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+KM_IN_MILE = 1.609
+L_IN_GALLON = 3.785
+mile_gallon = float(input("%50s" % "Введите потребление топлива в милях на галлон: "))
+l_100km = 1 / (mile_gallon * KM_IN_MILE / L_IN_GALLON) * 100
+print("%49s" %  "Потребление топлива в литрах на 100 км:", "%.2f" % l_100km)
+		</pre>		
+	</body>
+</html>

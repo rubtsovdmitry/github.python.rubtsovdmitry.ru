@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 9. Склад одежды. </title>		
+	</head>
+	<body>
+		<h1> 9. Склад одежды. </h1>
+		<div> <a class="link_task" href="./1.6.9.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Данные о товарах на складе хранятся в словаре: <br>
+			items = [{"name": "Кроссовки", "brand": "adidas", "price": 3440}, {"name": "Кепка", "brand": "reebok", "price": 3500}, {"name": "Рюкзак", "brand": "reebok", "price": 4800}, {"name": "Шорты", "brand": "puma", "price": 2500}, {"name": "Шорты", "brand": "adidas", "price": 2750}, {"name": "Футболка", "brand": "puma", "price": 1700}] <br>
+			Вывести бренд, тип и цену самого дорогого товара.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+items = [
+    {
+        "name": "Кроссовки",
+        "brand": "adidas",
+        "price": 3440
+    },
+    {
+        "name": "Кепка",
+        "brand": "reebok",
+        "price": 3500
+    },
+    {
+        "name": "Рюкзак",
+        "brand": "reebok",
+        "price": 4800
+    },
+    {
+        "name": "Шорты",
+        "brand": "puma",
+        "price": 2500
+    },
+    {
+        "name": "Шорты",
+        "brand": "adidas",
+        "price": 2750
+    },
+    {
+        "name": "Футболка",
+        "brand": "puma",
+        "price": 1700
+    }
+]
+
+# в начале определим самую дорогую цену
+expensive_price = 0
+for i in items:
+    expensive_price = i["price"] if i["price"] > expensive_price else expensive_price
+
+# Теперь будем искать наименование товара и его бренд с самой дорогой ценой
+result = list()
+for i in items:
+    if i["price"] == expensive_price:
+        result.append(i["name"] + " " + i["brand"] + " " + str(i["price"]))
+
+print("Список товаров и их брендов с самой дорогой ценой:", result)
+		</pre>				
+	</body>
+</html>

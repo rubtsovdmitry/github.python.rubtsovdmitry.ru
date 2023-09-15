@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 7. Задачи на функции. </title>		
+	</head>
+	<body>
+		<h1> 7. Задачи на функции. </h1>
+		<div> <a class="link_task" href="./1.7.7.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Написать функцию, которая переводит сантиметры в футы и дюймы. На входе одно число, на выходе - кортеж tuple из двух целых чисел int.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def perevod(sm):
+    FOOT = 30.48
+    INCH = 2.54
+    foot = int(sm // FOOT)
+    inch = int((sm % FOOT) / INCH + 0.5)
+    return (foot, inch)
+
+
+sm = float(input("Введите количество сантиметров для перевода в футы и дюймы: "))
+foot_and_inch = perevod(sm)
+
+print(foot_and_inch)
+		</pre>						
+	</body>
+</html>

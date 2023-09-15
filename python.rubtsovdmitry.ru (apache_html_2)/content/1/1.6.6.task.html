@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 6. Количество дней в месяцах. </title>		
+	</head>
+	<body>
+		<h1> 6. Количество дней в месяцах. </h1>
+		<div> <a class="link_task" href="./1.6.6.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит название месяца в формате jan, feb, mar, …, а программа: <br>
+			• Пишет на экране количество дней в этом месяце. Количество дней в феврале - как в текущем году. <br>
+			• Считает премию сотруднику из расчета 500р на календарный день за указанный месяц. <br>
+			Решить на основе операции in и if-elif
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+money = 500
+
+month = input("Введите название месяца: ")
+days31 = set({"january", "march", "may", "july", "august", "october", "december"})
+days30 = set({"april", "june", "september", "november"})
+days28 = set({"february"})
+
+if month in days31:
+    print("Количество дней в месяце", 31, "Премия составила", (31 * 500), "руб.")
+elif month in days30:
+    print("Количество дней в месяце", 30, "Премия составила", (30 * 500), "руб.")
+elif month in days28:
+    print("Количество дней в месяце", 28, "Премия составила", (28 * 500), "руб.")
+else:
+    print("Месяц введён с ошибкой")        
+		</pre>				
+	</body>
+</html>

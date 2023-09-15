@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 3. Пользователь вводит сумму покупки в рублях, программа выводит размер пошлины в рублях. </title>		
+	</head>
+	<body>
+		<h1> 3. Пользователь вводит сумму покупки в рублях, программа выводит размер пошлины в рублях. </h1>
+		<div> <a class="link_task" href="./1.2.3.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит сумму покупки в рублях, программа выводит размер пошлины в рублях. <br>
+			Пошлина считается следующим образом: <br>
+			- меньше 200 евро - без пошлины; <br>
+			- всё свыше 200 евро облагается 15% пошлиной (на разницу стоимости товара и 200 евро).
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# способ №1
+
+# ввод констант
+BUY = 200
+TAX = 15
+
+# ввод данных №2 (без проверки)
+kurs = float(input("Введите курс евро (в формате xxx.xx): "))
+bui_in_rub = float(input("Введите сумму покупки в рублях (в формате xxx.xx): "))
+
+bui_in_eur = bui_in_rub / kurs
+if bui_in_eur > 200:
+    base_for_tax = bui_in_eur - BUY
+    duty_in_eur = TAX / 100 * base_for_tax
+    duty_in_rub = duty_in_eur * kurs
+else:
+    duty_in_rub = 0
+
+print("Размер пошлины для покупки составляет", round(duty_in_rub, 2), "руб.")
+print()
+
+###############################################################################################################################3
+
+# способ №2 (условие в одну строку)
+
+# ввод констант
+BUY = 200
+TAX = 15
+
+# ввод данных №2 (без проверки)
+kurs = float(input("Введите курс евро (в формате xxx.xx): "))
+bui_in_rub = float(input("Введите сумму покупки в рублях (в формате xxx.xx): "))
+
+bui_in_eur = bui_in_rub / kurs
+
+base_for_tax = (bui_in_eur - BUY) if bui_in_eur > 200 else 0
+
+duty_in_eur = base_for_tax * TAX / 100
+duty_in_rub = duty_in_eur * kurs
+
+print("Размер пошлины для покупки составляет", round(duty_in_rub, 2), "руб.")
+		</pre>		
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 20. Свободное падение. </title>		
+	</head>
+	<body>
+		<h1> 20. Свободное падение <span class="a_marker"> (в коде есть строки из следующих тем: "модули"). </span> </h1>
+		<div> <a class="link_task" href="./1.1.20.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Напишите программу для расчета скорости объекта во время его соприкосновения с землей. <br> 
+			Пользователь должен задать высоту в метрах, с которой объект будет отпущен и начальную скорость.			 
+			Предположим, что ускорение свободного падения равно 9,8 м/с2. 
+			При известных начальной скорости (vi), ускорении (a) и дистанции (d) можно вычислить скорость при соприкосновении объекта с землей по формуле: <br>
+			V = Корень квадратный из (vi ** 2 + 2 * a * d)	
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from math import sqrt
+
+A = 9.8                                                                                       # ускорение свободного падения
+v = float(input("%70s" % "Введите начальную скорость в м/c: "))                
+d = float(input("%70s" % "Введите дистанцию до Земли в м: "))
+
+result = sqrt(v ** 2 + 2 * A * d)
+
+print("%69s" % "Скорость объекта во время соприкосновения с Землёй", round(result), "м/c")
+print("%69s" % "или", round(result / 1000 * 3600), "км/час")
+		</pre>		
+	</body>
+</html>

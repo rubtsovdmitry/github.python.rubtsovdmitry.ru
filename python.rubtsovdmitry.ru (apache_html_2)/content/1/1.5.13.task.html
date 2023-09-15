@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 13. Палиндромы. </title>		
+	</head>
+	<body>
+		<h1> 13. Палиндромы. </h1>
+		<div> <a class="link_task" href="./1.5.13.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Пользователь вводит слово, программа пишет, палиндром это или нет. Палиндром - слово, которое читается задом наперёд так же, как и слева направо, например, “доход”.					
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# первый способ
+
+word = input("Введите слово: ")
+drow = word[::-1]                                   # перевернём строковую переменную 
+
+if word == drow:                                    
+    print("Слово палиндром")
+else:
+    print("Слово не палиндром")
+		</pre>
+		<hr>
+		<pre>
+# второй способ (просто запись условия в одну строку)
+
+word = input("Введите слово: ")
+drow = word[::-1]                                                             # перевернём строковую переменную 
+print("Слово палиндром") if word == drow else print("Слово не палиндром")     # с функцией print запись в одну строку работает, а с присваиванием переменной (str) нет
+		</pre>												
+	</body>
+</html>

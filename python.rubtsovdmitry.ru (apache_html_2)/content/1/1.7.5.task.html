@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Задачи на функции. </title>		
+	</head>
+	<body>
+		<h1> 5. Задачи на функции. </h1>
+		<div> <a class="link_task" href="./1.7.5.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Написать функцию, которая переводит температуру из Фаренгейтов в Цельсии и Кельвины.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def temperature_c_function(farenheit):
+    temperature_c = (farenheit - 32) * 5 / 9
+    return temperature_c
+
+
+def temperature_k_function(temperature_c):
+    temperature_k = temperature_c + 273.15    
+    return temperature_k
+farenheit = float(input("Введите температуру в фаренгейтах: "))
+
+
+temperature_c = temperature_c_function(farenheit)
+temperature_k = temperature_k_function(temperature_c)
+
+print("Температура в цельсиях равна", round(temperature_c, 2))
+print("Температура в кельвинах равна", round(temperature_k, 2))
+		</pre>						
+	</body>
+</html>

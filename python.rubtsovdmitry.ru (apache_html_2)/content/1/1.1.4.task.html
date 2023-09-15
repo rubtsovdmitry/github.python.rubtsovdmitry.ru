@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 4. Задача на базовые операции. </title>		
+	</head>
+	<body>
+		<h1> 4. Задача на базовые операции. </h1>
+		<div> <a class="link_task" href="./1.1.4.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Пользователь вводит рост в ""американском стиле"": 
+			футы и дюймы (два input'a - один для футов, второй для дюймов). 
+			Программа переводит рост в см. <br>
+			Дополнительную проверку входных данных программа не делает.
+			В одном дюйме = 2.54см. В одном футе = 30.48см.			
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+print("Введите рост в американском стиле.")
+height_f = int(input("Футы: "))
+height_i = int(input("Дюймы: "))
+
+f = 30.48
+i = 2.54
+
+height = height_f * f + height_i * i
+height_m = int(height // 100)					# программа вычисляет сколько целых метров в росте
+height_sm = int(height % 100 + 0.5)			        # программа вычисляет сколько см в остатке, 0.5 - нужно для правильного округления, т.к. int просто отбрасывает дробную часть
+
+print()
+print("Рост в метрической системе исчисления равен", height_m, "м", height_sm, "см")		
+		</pre>		
+	</body>
+</html>

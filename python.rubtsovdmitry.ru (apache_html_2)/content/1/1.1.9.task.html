@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 9. Площадь садового участка. </title>		
+	</head>
+	<body>
+		<h1> 9. Площадь садового участка. </h1>
+		<div> <a class="link_task" href="./1.1.9.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Создайте программу, запрашивающую у пользователя длину и ширину садового участка в футах. Выведите на экран площадь участка в акрах. <br>
+			В одном акре содержится 43 560 квадратных футов.						
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+ACREE = 43560
+lenght = float(input("Введите длину садового участка в футах: "))
+width = float(input("Введите ширину садового учасика в футах: "))
+area = lenght * width
+area_acree = area / ACREE
+print("Площадь участка в акрах:", round(area_acree, 2))	
+		</pre>		
+	</body>
+</html>
