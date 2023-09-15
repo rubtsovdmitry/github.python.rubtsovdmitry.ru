@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 14. Определение времени года. </title>		
+	</head>
+	<body>
+		<h1> 14. Определение времени года. <span class="a_marker"> (в коде есть строки из следующих тем: "строки"). </span> </h1>
+		<div> <a class="link_task" href="./1.2.14.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Год делится на четыре сезона: зима, весна, лето и осень. Хотя даты смены сезонов каждый год могут меняться из-за особенностей календаря, мы в данном упражнении примем допущения, перечисленные ниже: <br>
+			- Весна - 20 марта <br>
+			- Лето - 21 июня <br>
+			- Осень - 22 сентября <br>
+			- Зима - 21 декабря
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# без проверки входных данных
+number = int(input("%100s" % "Введите число месяца: "))
+month = input("%100s" % "Введите месяц: ")
+
+if (month == "март" and number >= 20) or (month == "апрель" or month == "май") or (month == "июнь" and number &lt; 21):
+    print("%99s" % "Сейчас весна.")
+elif (month == "июнь" and number >= 21) or (month == "июль" or month == "август") or (month == "сентябрь" and number &lt; 22):
+    print("%99s" % "Сейчас лето.")
+elif (month == "сентябрь" and number >= 22) or (month == "октябрь" or month == "ноябрь") or (month == "декабрь" and number &lt; 21):
+    print("%99s" % "Сейчас осень.")
+elif (month == "декабрь" and number >= 21) or (month == "январь" or month == "февраль") or (month == "март" and number &lt; 20):
+    print("%99s" % "Сейчас зима.")
+		</pre>		
+	</body>
+</html>

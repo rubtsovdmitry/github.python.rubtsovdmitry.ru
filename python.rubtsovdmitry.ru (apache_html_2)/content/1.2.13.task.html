@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="content.css">		
+		<title> 13. Какого цвета клетка?  </title>		
+	</head>
+	<body>
+		<h1> 13. Какого цвета клетка? <span class="a_marker"> (в коде есть строки из следующих тем: "строки, циклы"). </span> </h1>
+		<div> <a class="link_task" href="./1.2.13.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Клетки на шахматной доске идентифицируются буквой и цифрой. Буква определяет положение клетки по горизонтали, а цифра – по вертикали. <br>
+			Ваша программа должна запрашивать у пользователя координаты клетки. 
+			Используйте условное выражение для определения того, с какой клетки – белой или черной – начинается столбец. 
+			Затем при помощи обычной арифметики необходимо определить цвет конкретной клетки. 
+			Например, если пользователь ввел a1, программа должна определить, что клетка с этими координатами черная. Если d5 – белая. Проверку на ошибочность ввода координат клетки выполнять не нужно. <br>
+			<img src="../pictures/chess.jpg" alt=""> <br>
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод переменных
+diapazon_letters = "abcdefgh"                                   # вертикали
+diapazon_digits = "12345678"                                    # горизонтали
+diapazon_values = {}                                            # создадим словарь, в кот. будем хранить соответствие клетки и цвета
+
+# заполнение словаря по нечётным столбцам
+count = 1                                                   
+for a in diapazon_letters[::2]:
+    for b in diapazon_digits:         
+        color = "black" if count % 2 != 0 else "white"
+        diapazon_values[a + b] = color
+        count += 1
+
+# заполнение словаря по чётным столбцам
+count = 1
+for a in diapazon_letters[1::2]:
+    for b in diapazon_digits:         
+        color = "black" if count % 2 == 0 else "white"
+        diapazon_values[a + b] = color
+        count += 1
+
+# запрос координат клетки от пользователя
+letter = input("%100s" % "Введите столбец (буква): ")
+digit = input("%100s" % "Введите строку (цифра): ")
+plus = letter + digit
+
+# вывод результата
+print("%99s" % "Координаты:", plus, "Цвет:", diapazon_values[plus])
+		</pre>		
+	</body>
+</html>
