@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 17. Шкала Рихтера. </title>		
+	</head>
+	<body>
+		<h1> 17. Шкала Рихтера. <span class="a_marker"> (в коде есть строки из следующих тем: "словари, циклы, модули"). </span> </h1>
+		<div> <a class="link_task" href="./1.2.17.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Диапазоны магнитуд землетрясений по шкале Рихтера с описаниями: <br>
+			<img src="../../pictures/rihter.jpg" alt=""> <br>
+			Ваша программа должна запрашивать у пользователя магнитуду землетрясения по шкале Рихтера и выводить на экран описание уровня, соответствующего введенному значению. 
+			Например, если пользователь введет значение 5,5, нужно вывести сообщение о том, что этой магнитуде соответствует умеренный уровень землетрясения.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from math import inf
+
+# ввод данных
+richter_scale = {
+    "Минимальное": (0.0, 2.0),
+    "Очень слабое": (2.0, 3.0),
+    "Слабое": (3.0, 4.0),
+    "Промежуточное": (4.0, 5.0),
+    "Умеренное": (5.0, 6.0),
+    "Сильное": (6.0, 7.0),
+    "Очень сильное": (7.0, 8.0),
+    "Огромное": (8.0, 10.0),
+    "Разрушительное": (10.0, inf)
+}
+value = float(input("%50s" % "Введите магнитуду землетрясения: "))
+
+for a, b in richter_scale.items():
+    if b[0] <= value < b[-1]:
+        print("%49s" % "Землетрясение:", a)
+		</pre>		
+	</body>
+</html>
