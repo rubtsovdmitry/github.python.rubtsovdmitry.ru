@@ -45,7 +45,7 @@ number = float(input("%100s" % "Введите числовую оценку в 
 result = 0                                                              # если переменная не изменится, то это запустит условие в будущем
 if number >= estimation["A"]:                                           # условие сразу выведет максимальный результат
     result = "A"        
-elif number < 0:
+elif number &lt; 0:
     result = "Введено отрицательное число"                              # условие выведет, если оценка меньше 0
 else:
     more = list()                                                       # здесь будут хранится оценки выше
@@ -53,7 +53,7 @@ else:
     for a, b in estimation.items():
         if number == b:                                                 # условие выведет значение, если оно точно соответствует введённому
             result = a
-        elif number < b:
+        elif number &lt; b:
             more.append((a, b))
         elif number > b:
             less.append((a, b))
