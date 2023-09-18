@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 1. Числа, кратные 3 или 5. </title>		
+	</head>
+	<body>
+		<h1> 1. Числа, кратные 3 или 5. </h1>
+		<div> <a class="link_task" href="./3.1.1.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Если выписать все натуральные числа меньше 10, кратные 3 или 5, то получим 3, 5, 6 и 9. Сумма этих чисел равна 23. <br>
+			Найдите сумму всех чисел меньше 1000, кратных 3 или 5. 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+amount = 0
+for i in range(1,1000):
+    if ((i % 3) == 0) or ((i % 5) == 0):
+        amount += i
+        print("%20s%20i%20s%20i" % ("Новая цифра", i, "Накопленная сумма", amount))
+print("########################################################################################\n")
+print("%60s%20i" % ("Сумма", amount))			
+		</pre>
+	</body>
+</html>
