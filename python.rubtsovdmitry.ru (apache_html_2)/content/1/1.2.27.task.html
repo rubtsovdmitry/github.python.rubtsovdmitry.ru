@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 27. Действительный номерной знак машины? </title>		
+	</head>
+	<body>
+		<h1> 27. Действительный номерной знак машины? <span class="a_marker"> (в коде есть строки из следующих тем: "строки"). </span> </h1>
+		<div> <a class="link_task" href="./1.2.27.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Допустим, в нашей стране старый формат номерных знаков автомобилей состоял из трех заглавных букв, следом за которыми шли три цифры. 
+			Пос­ле того как все возможные номера были использованы, формат был изменен на четыре цифры, предшествующие трем заглавным буквам. <br>
+			Напишите программу, запрашивающую у пользователя номерной знак машины и оповещающую о том, для какого формата подходит данная последовательность символов: для старого или нового. Если введенная последовательность не соответствует ни одному из двух форматов, укажите это в сообщении.			
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+number = input("%100s" % "Введите гос. номер автомобиля: ")
+
+if len(number) == 6 and \
+  number[-3:-1].isdigit() == True and \
+  "А" &lt;= number[0] &lt;= "Я" and \
+  "А" &lt;= number[1] &lt;= "Я" and \
+  "А" &lt;= number[2] &lt;= "Я":
+    print("%99s" % "Гос. номера старого образца")
+elif len(number) == 7 and \
+  number[0:4].isdigit() == True and \
+  "А" &lt;= number[4] &lt;= "Я" and \
+  "А" &lt;= number[5] &lt;= "Я" and \
+  "А" &lt;= number[6] &lt;= "Я":
+    print("%99s" % "Гос. номера нового образца")
+else:
+    print("%99s" % "Неверный формат гос. номера")
+		</pre>		
+	</body>
+</html>
