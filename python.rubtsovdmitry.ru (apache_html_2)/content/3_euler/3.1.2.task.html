@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 2. Сумма всех четных элементов ряда Фибоначчи. </title>		
+	</head>
+	<body>
+		<h1> 2. Сумма всех четных элементов ряда Фибоначчи. </h1>
+		<div> <a class="link_task" href="./3.1.2.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Найдите сумму всех четных элементов ряда Фибоначчи, которые не превышают четыре миллиона. 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+A = 0
+B = 1
+MAX = 4000000
+amount_total = 0
+
+while (A + B) < MAX:
+    amount = A + B
+    A = amount
+    if (A < MAX) and (A % 2) == 0:
+        amount_total += A
+        print(A, "Чётное")
+    elif (A < MAX) and (A % 2) != 0:
+        print(A)
+
+    amount = A + B
+    B = amount
+    if (B < MAX) and (B % 2) == 0:
+        amount_total += B
+        print(B, "Чётное")
+    elif (B < MAX) and (B % 2) != 0:
+        print(B)
+print("#################################################\n")
+print("Сумма всех чётных элементов =", amount_total)			
+		</pre>
+	</body>
+</html>
