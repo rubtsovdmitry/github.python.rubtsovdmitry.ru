@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Наименьшее кратное. </title>		
+	</head>
+	<body>
+		<h1> 5. Наименьшее кратное. </h1>
+		<div> <a class="link_task" href="./3.1.5.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			2520 - самое маленькое число, которое делится без остатка на все числа от 1 до 10. Какое самое маленькое число делится нацело на все числа от 1 до 20? 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+a = range(1, 21)
+
+result = []                         # пустой список (переменная) для запуска цикла while
+digit = 1                           # цифра начала цикла
+while len(result) != 20:            # цикл повторяется пока результат деления с вложенным условием не наберётся равным 20
+    result = []                     # после каждого перебора цифры переменная, которая нужна для подсчёта обнуляется и начинается перебор заново
+    for ai in a:                    # запускает цикл для проверки делимости нового числа digit на делимость для всех делителей в цикле
+        if digit % ai == 0:         # проверяет делимость числа для перибираемых делителей
+            result.append("+")      # копит список результат, с целью накопить 20 значений
+    digit += 1                      # увеличивает цифру на 1
+print(digit-1)                      # выводит искомую цифру			
+		</pre>
+	</body>
+</html>
