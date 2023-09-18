@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 26. На какой день недели выпадает 1 января? </title>		
+	</head>
+	<body>
+		<h1> 26. На какой день недели выпадает 1 января? </h1>
+		<div> <a class="link_task" href="./1.2.26.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Следующая формула может быть использована для определения дня недели, соответствующего 1 января заданного года: <br>
+			<img src="../../pictures/january1.jpg" alt=""> <br>
+			В результате мы получим целое число, представляющее день недели от воскресенья (0) до субботы (6).
+			 Используйте эту формулу для написания программы, запрашивающей у пользователя год и выводящей на экран день недели, на который в заданном году приходится 1 января. При этом на экран вы должны вывести не числовой эквивалент дня недели, а его полное название.			
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+year = int(input("%50s" % "Введите год: "))
+
+# решение определения дня недели
+day_of_the_week = (year + int((year - 1) / 4) - int((year - 1) / 100) + int((year - 1) / 400)) % 7 
+
+# продолжение решения (перевод числа в название недели)
+day = ""                                                    # без создания этой переменной не будут работать следующие условия
+day = "Воскресенье" if day_of_the_week == 0 else day
+day = "Понедельник" if day_of_the_week == 1 else day
+day = "Вторник" if day_of_the_week == 2 else day
+day = "Среда" if day_of_the_week == 3 else day
+day = "Четверг" if day_of_the_week == 4 else day
+day = "Пятница" if day_of_the_week == 5 else day
+day = "Суббота" if day_of_the_week == 6 else day
+
+print("%49s" % f"Первое января {year} года:", day)
+		</pre>		
+	</body>
+</html>
