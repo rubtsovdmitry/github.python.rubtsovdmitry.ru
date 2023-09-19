@@ -8,3 +8,8 @@ a { color: black; font-weight: normal; font-size: 18px; }
 .list_task { border: 1px dotted gray; width: 74%; height: 2250px; margin-left: 0.5%; }
 .git { color: black; font-weight: bold; font-size: 26px; }
 nav hr { width: 95%; margin-right: 1px; }
+.for_pc {}
+.for_mobile {}
+@media (max-width: 1023px) { .for_pc { display:none; } }
+@media (min-width: 1024px) { .for_mobile { display:none; } }
+p { text-align: center; font-size: 4em; }
