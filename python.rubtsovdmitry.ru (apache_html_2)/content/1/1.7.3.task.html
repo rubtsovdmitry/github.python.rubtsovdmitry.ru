@@ -19,7 +19,7 @@
 			sin, cos, tg, ctg. <br>
 			углы 0, 30, 45, 60, 90, 180, 270, 360 градусов. <br>
 			Какие нюансы: <br>
-			1. Котангенса в модуле math нет. <br> 
+			1. Котангенса в библиотеке math нет. <br> 
 			cot = 1 / tan <br> 
 			tan = sin / cos <br>
 			2. Углы даны в градусах, а нужно подставлять в радианах (math.radians()). <br>
@@ -50,7 +50,7 @@ for i in trigonometry:
         elif i == "cos":
             table_trigonometry[i + " " + str(i2)] = round(mt.cos(i3), 3)                                                            # заполним словарь для косинуса
         elif i == "tg":          
-            table_trigonometry[i + " " + str(i2)] = "None" if i2 == 90 or i2 == 270 else round(mt.tan(i3), 3)                       # заполним словарь для тангенса. Кстати можно было использовать тип данных из модуля math "nan"
+            table_trigonometry[i + " " + str(i2)] = "None" if i2 == 90 or i2 == 270 else round(mt.tan(i3), 3)                       # заполним словарь для тангенса. Кстати можно было использовать тип данных из библиотеки math "nan"
         else:
             table_trigonometry[i + " " + str(i2)] = "None" if i2 ==0 or i2 == 180 or i2 == 360 else round(1 / mt.tan(i3), 3)        # заполним словарь для котангенса
 
