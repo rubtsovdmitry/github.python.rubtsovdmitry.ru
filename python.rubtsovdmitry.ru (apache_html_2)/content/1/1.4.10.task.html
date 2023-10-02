@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 10. Таблица соотношения температур. </title>		
+	</head>
+	<body>
+		<h1> 10. Таблица соотношения температур. <span class="a_marker"> (в коде есть строки из следующих тем: "функции"). </span> </h1>
+		<div> <a class="link_task" href="./1.4.10.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите программу для вывода таблицы соотношения температур, выраженных в градусах Цельсия и Фаренгейта. 
+			В таблице должны размещаться все температуры между 0 и 100 градусами Цельсия, кратные 10. Дополните таблицу подходящими заголовками. Формулу для перевода температуры из градусов Цельсия в градусы Фаренгейта можно легко найти на просторах интернета.										 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def temp(i):
+    temperature_f = str(round((i * 9 / 5 + 32), 2))
+    return temperature_f
+
+
+temperature = range(10, 101, 10)
+for i in temperature:
+    print("%35s" % "Температура в градусах Цельсия:", f"{i:.&lt;20}", "%35s" % "Температура в градусах Фаренгейта:", f"{temp(i):.&lt;20}")
+		</pre>				
+	</body>
+</html>
