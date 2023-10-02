@@ -31,7 +31,7 @@
 def new_price(amount):
     amount_in_cents = int(amount * 100)
     need_mod = amount_in_cents % 5 
-    need_mod = 0 if need_mod < 2.5 else 5
+    need_mod = 0 if need_mod &lt; 2.5 else 5
     amount_in_cents = (amount_in_cents // 5) * 5 + need_mod
     amount = amount_in_cents / 100
     return amount
