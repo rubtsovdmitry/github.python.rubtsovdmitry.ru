@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 12. Наибольший общий делитель. </title>		
+	</head>
+	<body>
+		<h1> 12. Наибольший общий делитель. </h1>
+		<div> <a class="link_task" href="./1.3.12.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Наибольший общий делитель двух положительных чисел представляет собой наибольшее число, на которое без остатка делятся оба числа. <br>
+			Напишите программу, запрашивающую у пользователя два положительных целых числа и выводящую для них наибольший общий делитель. 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+while True:
+    try:
+        digit_1 = int(input("%65s" % "Введите первое положительное число (больше или равно 1): "))
+        digit_2 = int(input("%65s" % "Введите второе положительное число (больше или равно 1): "))
+        if digit_1 > 0 and digit_2 > 0:
+            break
+        else:
+            print("%64s" % "Одно или оба числа меньше 1.")
+    except:
+        print("%64s" % "В вводе ошибка.")
+
+min_digit = min(digit_1, digit_2)
+while min_digit >= 1:
+    if digit_1 % min_digit == 0 and digit_2 % min_digit == 0:
+        print("%64s" % "Наибольший общий делитель равен:", min_digit)
+        break
+    min_digit -= 1
+		</pre>				
+	</body>
+</html>
