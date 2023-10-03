@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 14. Таблица умножения. </title>		
+	</head>
+	<body>
+		<h1> 14. Таблица умножения. </h1>
+		<div> <a class="link_task" href="./1.4.14.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно составить таблицу умножения:										 
+		</div>
+		<hr>
+		<pre>
+       1   2   3   4   5   6   7   8   9   10
+   1   1   2   3   4   5   6   7   8   9   10
+   2   2   4   6   8   10  12  14  16  18  20
+   3   3   6   9   12  15  18  21  24  27  30
+   4   4   8   12  16  20  24  28  32  36  40
+   5   5   10  15  20  25  30  35  40  45  50
+   6   6   12  18  24  30  36  42  48  54  60
+   7   7   14  21  28  35  42  49  56  63  70
+   8   8   16  24  32  40  48  56  64  72  80
+   9   9   18  27  36  45  54  63  72  81  90
+		</pre>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+diapazon = range(1, 11)
+
+# выведем верхнюю строку заголовков
+print("     ", end="")                                              # выводит первое поле (оно пустое)
+for i in diapazon:                                                  # заполняет строку значениями из range
+    print("%5s" % i, end="")
+print()
+
+for i in diapazon:
+    print("%5s" % i, end="")                                        # заполним первое значение (он же столбец) по-строчно в цикле
+    for i2 in diapazon:                                             # будем заполнять таблицу по-строчно. значение по-вертикали умножаем на значения по-горизонтали
+        print("%5s" % (i * i2), end="")
+    print()                                                         # после каждой заполненной строки сделаем перенос коретки на след. строку
+		</pre>				
+	</body>
+</html>
