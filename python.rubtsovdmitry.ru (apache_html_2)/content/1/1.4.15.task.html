@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 15. Двоичное число в десятичное. </title>		
+	</head>
+	<body>
+		<h1> 15. Двоичное число в десятичное <span class="a_marker"> (в коде есть строки из следующих тем: "строки"). </span> </h1>
+		<div> <a class="link_task" href="./1.4.15.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Напишите программу, которая будет преобразовывать двоичные значения (по основанию 2) в десятичные (по основанию 10). 
+			Пользователь должен ввести число в двоичном виде как строку, а программа – преобразовать его по-символьно в десятичный вид и вывести на экран с соответствующим сообщением. <br>
+			Подсказка: <br>
+			<img src="../../pictures/2_to_10.jpg" alt="">
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# проверка ввода
+while True:
+    digit = input("%50s" % "Введите число в двоичной системе счисления: ")
+    test = "pass"
+    for i in digit:        
+        if i != "0" and i != "1":
+            test = "mistake"                                    
+    if test == "pass":
+        break
+
+digit_mod = digit[::-1]
+diapazon = range(0, len(digit_mod))
+
+amount = 0
+for a, b in zip(digit_mod, diapazon):
+    amount += (int(a) * 2 ** b)
+
+print("%49s" % "Перевод в десятиричную систему счисления:", amount)	
+		</pre>		
+	</body>
+</html>
