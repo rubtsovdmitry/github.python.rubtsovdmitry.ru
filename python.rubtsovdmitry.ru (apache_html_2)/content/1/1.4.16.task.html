@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 16. Двоичное число в десятичное. </title>		
+	</head>
+	<body>
+		<h1> 16. Двоичное число в десятичное <span class="a_marker"> (в коде есть строки из следующих тем: "строки"). </span> </h1>
+		<div> <a class="link_task" href="./1.4.16.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+		   <hr>			
+			Напишите программу, которая будет преобразовывать десятичные значения (по основанию 10) в двоичные (по основанию 2). <br>
+			Подсказка: <br>
+			<img src="../../pictures/10_to_2.jpg" alt=""> <br>
+			Остается только записать цифры, обведенные красным кружочком, справа налево. 
+			Вуаля, всё готово: 123 <span class="span_down"> 10 </span> = 1111011 <span class="span_down"> 2 </span>. Число 123 в двоичной системе счисления будет выглядеть, как 1111011.
+		</div>
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# проверка ввода
+while True:
+    digit = input("%50s" % "Введите число в десятичной системе счисления: ")
+    if digit.isdigit():
+        break
+digit = int(digit)
+result = str()
+
+while digit >= 1:
+    remains = digit % 2
+    result += str(remains)
+    digit = int(digit / 2)
+result = result[::-1]
+
+print("%49s" % result)	
+		</pre>		
+	</body>
+</html>
