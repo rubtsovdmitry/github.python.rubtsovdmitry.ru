@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 11. Hello, World!!! </title>		
+	</head>
+	<body>
+		<h1> 11. Hello, World!!! </h1>
+		<div> <a class="link_task" href="./1.7.11.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно сделать вот так: <br>
+			<img src="../../pictures/hello_world.gif" alt=""> <br>
+			Перемещается по экрану фраза: "Hello, world!!!"			
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import time
+
+def my_print(indent):                                       # все эти принты функция печатает в одну строку 
+    print(" " * indent, end="")
+    print("Hello, world!!!" , end="")
+    print(" " * 10, end="")
+    print("Hello, world!!!" , end="")
+    print(" " * 10, end="")
+    print("Hello, world!!!" , end="")
+    print(" " * 10, end="")
+    print("Hello, world!!!")
+
+
+indent = 0                                                  # будем копить и уменьшать значение для пробелов циклично
+indent_move = True                                          # маркер направления движения строки
+
+while True:        
+    if indent_move:                                         # если маркер растущий, то количество пробелов увеличивается
+        my_print(indent)                                    # передаём функции новое значение пробелов
+        indent += 1
+        if indent == 50:                                    # при 50 пробелов маркер меняет направление
+            indent_move = False
+    else:                                                   # маркер уменьшается
+        my_print(indent)
+        indent -= 1
+        if indent == 0:
+            indent_move = True                              # при 0 пробелов маркер меняет направление
+    time.sleep(0.1)                                         # задержка перед выполнением следующего действия 
+		</pre>						
+	</body>
+</html>
