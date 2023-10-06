@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 13. Геометрическая прогрессия. </title>		
+	</head>
+	<body>
+		<h1> 13. Геометрическая прогрессия. </h1>
+		<div> <a class="link_task" href="./1.7.13.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно рассчитать геометрическую прогрессию по формуле: <br> 
+			sum = a * (1 - r<span class="span_up"> n</span>) / (1 - r), где <br>
+			a - первый элемент последовательности, <br>
+			r - знаменатель последовательности (пусть он всегда будет положительный), <br>
+			n - количество элементов (всегда больше 1). <br>
+			Все расчёты проводить с целыми числами.									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function(a, r, n):
+    if r == 1:
+        return (a * n)    
+    else:
+        return int(a * (1 - r ** n) / (1 - r))
+
+
+# проверка входных данных №1
+while True:
+    a = input("%50s" % "Введите первый элемент последовательности: ")
+    try:
+        a = int(a)
+        break
+    except:
+        print("%49s" % "Вы ввели не число.")
+
+# проверка входных данных №2
+while True:
+    r = input("%50s" % "Введите знаменатель последовательности: ")
+    try:
+        r = int(r)
+        if r < 0:
+            print("%49s" % "Вы ввели отрицательный знаменатель.")
+            continue
+        else:
+            break
+    except:
+        print("%49s" % "Вы ввели не число.")
+
+# проверка входных данных №3
+while True:
+    n = input("%50s" % "Введите количество элементов последовательности: ")
+    try:
+        n = int(n)
+        if n >= 1:
+            break
+        else:
+            print("%49s" % "Вы ввели количество элементов меньше 1.")
+            continue
+    except:
+        print("%49s" % "Вы ввели не число.")
+
+amount = my_function(a, r, n)
+print("%49s" % "Сумма геометрической прогрессии:", amount) 
+		</pre>						
+	</body>
+</html>
