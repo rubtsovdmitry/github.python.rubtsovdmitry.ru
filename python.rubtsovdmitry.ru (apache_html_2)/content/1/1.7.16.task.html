@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 16. Расчет стоимости доставки. </title>		
+	</head>
+	<body>
+		<h1> 16. Расчет стоимости доставки. </h1>
+		<div> <a class="link_task" href="./1.7.16.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Интернет-магазин предоставляет услугу экспресс-доставки для части своих товаров по цене $10,95 за первый товар в заказе и $2,95 – за все последующие. <br>
+			Напишите функцию, принимающую в качестве единственного параметра количество товаров в заказе и возвращающую общую сумму доставки. В основной программе должны производиться запрос количест­ва позиций в заказе у пользователя и отображаться на экране сумма доставки.									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function(quntity):
+    FIRST = 10.95
+    SECOND = 2.95
+    if quntity == 1:
+        return str(FIRST)
+    else:
+        return (str(round(FIRST + SECOND * (quntity -1), 2)) + " $")
+
+
+# ввод количества товаров в заказе
+while True:
+    quntity = input("%75s" % "Введите количество товаров в заказе (например, 100): ")
+    try:
+        quntity = int(quntity)
+        if quntity < 1:
+            continue
+        else:
+            break
+    except:
+        print("%74s" % "Вы ввели не цифры.")
+
+print("%74s" % "Стоимость доставки составит:", my_function(quntity)) 
+		</pre>						
+	</body>
+</html>
