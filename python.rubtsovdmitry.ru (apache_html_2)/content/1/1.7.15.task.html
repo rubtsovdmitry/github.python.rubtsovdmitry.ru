@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 15. Плата за такси. </title>		
+	</head>
+	<body>
+		<h1> 15. Плата за такси. </h1>
+		<div> <a class="link_task" href="./1.7.15.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Представьте, что сумма за пользование услугами такси складывается из базового тарифа в размере "xxx" плюс "yyy" за каждый 1 км поездки. <br>
+			Напишите функцию, принимающую в качестве параметров расстояние поездки в километрах, цену базового тарифа и цену за 1 км пути и возвращающую итоговую сумму оплаты такси.									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function(base, price_1km, way):
+    return (base + price_1km * way)
+
+
+# ввод стоимости базового тарифа
+while True:
+    base = input("%75s" % "Введите стоимость базового тарифа (например, 100): ")
+    try:
+        base = float(base)
+        break
+    except:
+        print("%74s" % "Вы ввели не цифры.")
+
+# ввод стоимости проезда 1 км пути
+while True:
+    price_1km = input("%75s" % "Введите стоимость проезда 1 км пути (например, 20): ")
+    try:
+        price_1km = float(price_1km)
+        break
+    except:
+        print("%74s" % "Вы ввели не цифры.")
+
+# ввод длины поездки в км.
+while True:
+    way = input("%75s" % "Введите длину поездки в км (например, 10): ")
+    try:
+        way = float(way)
+        break
+    except:
+        print("%74s" % "Вы ввели не цифры.")
+
+print("%74s" % "Стоимость поездки составила:", my_function(base, price_1km, way)) 
+		</pre>						
+	</body>
+</html>
