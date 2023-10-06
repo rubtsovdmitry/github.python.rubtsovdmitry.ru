@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 14. Вычисляем длину гипотенузы. </title>		
+	</head>
+	<body>
+		<h1> 14. Вычисляем длину гипотенузы. </h1>
+		<div> <a class="link_task" href="./1.7.14.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите функцию, принимающую на вход длины двух катетов прямоугольного треугольника и возвращающую длину гипотенузы, рассчитанную по теореме Пифагора. <br>
+			В главной программе должен осуществляться запрос длин сторон у пользователя, вызов функции и вывод на экран полученного результата.									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import math
+
+def my_function(cathet_1, cathet_2):
+    return (math.sqrt(cathet_1 ** 2 + cathet_2 ** 2))
+
+
+cathet_1 = float(input("%75s" % "Введите длину 1-го катета: "))
+cathet_2 = float(input("%75s" % "Введите длину 2-го катета: "))
+print()
+hypotenuse = my_function(cathet_1, cathet_2)
+print("%74s" % "Длина гипотенузы:", hypotenuse) 
+		</pre>						
+	</body>
+</html>
