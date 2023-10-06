@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 17. Медиана трех значений. </title>		
+	</head>
+	<body>
+		<h1> 17. Медиана трех значений. </h1>
+		<div> <a class="link_task" href="./1.7.17.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите функцию, которая будет принимать на вход три числа в качест­ве параметров и возвращать их медиану. <br> 
+			В основной программе должен производиться запрос к пользователю на предмет ввода трех чисел, а также вызов функции и отображение результата.									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function(*custom):                                                                           # *custom - такая запись даёт на вход кортеж custom из входящих аргументов
+    return ((min(custom) + max(custom)) / 2)
+
+# ввод цифр
+while True:
+    digit = input("%75s" % "Введите первое число: ")
+    digit_2 = input("%75s" % "Введите второе число: ")
+    digit_3 = input("%75s" % "Введите третье число: ")
+    try:
+        digit = int(digit)
+        digit_2 = int(digit_2)
+        digit_3 = int(digit_3)
+        break
+    except:
+        print("%74s" % "Вы ввели не цифры.")
+
+print("%74s" % "Медиана числового ряда равна:", my_function(digit, digit_2, digit_3)) 
+		</pre>						
+	</body>
+</html>
