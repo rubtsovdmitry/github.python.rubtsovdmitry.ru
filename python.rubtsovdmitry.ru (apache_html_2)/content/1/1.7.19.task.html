@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 19. Двенадцать дней Рождества. </title>		
+	</head>
+	<body>
+		<h1> 19. Двенадцать дней Рождества. </h1>
+		<div> <a class="link_task" href="./1.7.19.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			«Двенадцать дней Рождества» (The Twelve Days of Christmas) – старая анг­лийская песня, построение которой базируется на постоянно увеличивающемся списке подарков в каждый из 12 дней Рождества. 
+			В первый день был послан один подарок, в следующий – второй и т. д. 
+			Первые три куплета песни приведены ниже. Полностью текст песни можно без труда найти в интернете. <br>
+			On the first day of Christmas <br>
+			my true love sent to me: <br>
+			A partridge in a pear tree. <br>
+			<br>
+			On the second day of Christmas <br>
+			my true love sent to me: <br>
+			Two turtle doves, <br>
+			And a partridge in a pear tree. <br>
+			<br> 
+			On the third day of Christmas <br>
+			my true love sent to me: <br>
+			Three French hens, <br>
+			Two turtle doves, <br>
+			And a partridge in a pear tree. <br>
+			<br>
+			Напишите программу, которая будет сама строить куплеты этой песенки. В программе должна присутствовать функция для отображения номера дня в первой строке каждого куплета. 
+			В качестве входного параметра она должна принимать порядковый номер дня. Далее в основной программе эта функция должна быть вызвана 12 раз подряд. Каждая строка с очередным подарком должна присутствовать в вашей программе лишь раз. <br>
+			Нужно создать свою библиотеку, которая будет храниться в том же каталоге, что и эта программа. Функцию для библиотеки можно взять из предыдущего упражнения. Я назвал файл библиотеки "my_lib.py". Обращаться к нему я буду: "import my_lib". 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import my_lib
+
+
+digits = range(1, 13)
+lines = ("", "Two turtle doves,", "Three French hens,", "Four calling birds,", "Five golden rings", "Six geese-a-laying,", "Seven swans-a-swimming,", "Eight maids-a-milking,", "Nine drummers drumming,", "Ten pipers piping,", "Eleven ladies dancing,", "Twelve lords-a-leaping,")
+count = 0
+plus = str()
+print()
+for a, b in zip(digits, lines):
+    if count == 0:
+        print("On the", my_lib.my_function(a), "day of Christmas")        
+        print("my true love sent to me:")        
+        print("A partridge in a pear tree.")
+        print()
+    else:
+        print("On the", my_lib.my_function(a), "day of Christmas")
+        print("my true love sent to me:")
+        plus = b + "\n" + plus       
+        print(plus, end="")
+        print("And a partridge in a pear tree.")
+        print()
+    count += 1 
+		</pre>
+		<hr>
+		<div>
+			<span> Код библиотеки: </span>
+		</div>						
+		<hr>
+		<pre>
+def my_function(digit):                                                                           
+    our_dict = {
+        1: "first",
+        2: "second",
+        3: "third",
+        4: "fourth",
+        5: "fifth",
+        6: "sixth",
+        7: "seventh",
+        8: "eighth",
+        9: "ninth",
+        10: "tenth",
+        11: "eleventh",
+        12: "twelfth"
+    }
+    return our_dict[digit]		
+		</pre>
+	</body>
+</html>
