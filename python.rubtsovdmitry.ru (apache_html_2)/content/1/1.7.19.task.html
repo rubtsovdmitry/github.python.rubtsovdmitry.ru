@@ -43,7 +43,7 @@
 		</div>
 		<hr>
 		<pre>
-import my_lib
+<span class="span_red">import my_lib </span>
 
 
 digits = range(1, 13)
@@ -53,12 +53,12 @@ plus = str()
 print()
 for a, b in zip(digits, lines):
     if count == 0:
-        print("On the", my_lib.my_function(a), "day of Christmas")        
+        print("On the", <span class="span_red"> my_lib.my_function(a) </span>, "day of Christmas")        
         print("my true love sent to me:")        
         print("A partridge in a pear tree.")
         print()
     else:
-        print("On the", my_lib.my_function(a), "day of Christmas")
+        print("On the", <span class="span_red"> my_lib.my_function(a) </span>, "day of Christmas")
         print("my true love sent to me:")
         plus = b + "\n" + plus       
         print(plus, end="")
@@ -72,7 +72,7 @@ for a, b in zip(digits, lines):
 		</div>						
 		<hr>
 		<pre>
-def my_function(digit):                                                                           
+<span class="span_red">def my_function(digit): </span>                                                                           
     our_dict = {
         1: "first",
         2: "second",
