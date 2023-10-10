@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 23. Треугольник ли? </title>		
+	</head>
+	<body>
+		<h1> 23. Треугольник ли? </h1>
+		<div> <a class="link_task" href="./1.7.23.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Пользователь вводит три стороны треугольника. Программа проверяет может ли из этих сторон получится треугольник? <br>
+			Первая проверка: ни одна из сторон не должна быть меньше или равна нулю. <br>
+			Вторая проверка: ни одна из сторон не должна быть равна или больше половины суммы всех сторон.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function_2(list_of_sides):
+    result = True
+    for i in list_of_sides:        
+        if i >= (sum(list_of_sides) / 2):
+            result = False                
+    return result
+
+
+def my_function_1(*sides):
+    list_of_sides = [i for i in sides if i > 0]                                             # составим список из трёх элементов, если все из них больше 0
+    if len(list_of_sides) == 3:                                                             # проверка списка, есть ли в нём три элемента, если есть то треугольник получается
+        result = my_function_2(list_of_sides)                                               # по количеству сторон проверили треугольник, теперь нужно проверить, чтобы одна из сторон не была больше или равна половине суммы всех сторон (след. функция)
+    else:
+        result = False
+    return result
+
+
+while True:
+    try:
+        first_side = int(input("%100s" % "Введите первую сторону треугольника: "))
+        second_side = int(input("%100s" % "Введите вторую сторону треугольника: "))
+        third_side = int(input("%100s" % "Введите третью сторону треугольника: "))
+        break        
+    except:
+        print("%99s" % "Вы ввели не цифры. Попробуйте ещё раз.")
+result = my_function_1(first_side, second_side, third_side)
+if result:
+    print("%99s" % "Из введённых сторон треугольник получится.")
+else:
+    print("%99s" % "Из введённых сторон треугольник не получится.")		
+		</pre>
+	</body>
+</html>
