@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 25. Является ли строка целым числом? </title>		
+	</head>
+	<body>
+		<h1> 25. Является ли строка целым числом? </h1>
+		<div> <a class="link_task" href="./1.7.25.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно написать функцию, которая проверяет является ли строка целым числом. Если есть пробелы в начале и в конце строки, программа должна это как-то обработать.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_function(x):
+    x = x.strip()
+    if x.isdigit():
+        return "Это цифра."
+    else:
+        return "Это не цифра."
+
+
+x = input("%80s" % "Введите символы и программа проверит цифры это или нет: ")
+print("%79s" %  my_function(x))		
+		</pre>
+	</body>
+</html>
