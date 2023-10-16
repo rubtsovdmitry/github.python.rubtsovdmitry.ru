@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 26. Приоритеты операторов. </title>		
+	</head>
+	<body>
+		<h1> 26. Приоритеты операторов. </h1>
+		<div> <a class="link_task" href="./1.7.26.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите функцию, которая будет возвращать целое число, представляющее собой приоритет или старшинство математического оператора. В качестве единственного параметра эта функция будет принимать строку, содержащую оператор. На выходе функция должна давать 1 для операторов «+» и «–», 2 для «*» и «/» и 3 для «ˆ».	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my(operator):
+    my_dict = {
+        1: ("+", "-"),
+        2: ("*", "/"),
+        3: ("^")
+    }
+    result = "такого оператора нет"
+    for a, b in my_dict.items():
+        if operator in b:
+            result = str(a)                            
+    return result
+        
+
+operator = input("%75s" % """Введите оператор "+", "-", "*", "/" или "^": """)
+print("%74s" % "Приоритет для оператора:", f"{my(operator)}.")		
+		</pre>
+	</body>
+</html>
