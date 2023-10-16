@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 29. Случайный пароль. </title>		
+	</head>
+	<body>
+		<h1> 29. Случайный пароль. </h1>
+		<div> <a class="link_task" href="./1.7.29.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите функцию, которая будет генерировать случайный пароль. 
+			В пароле должно быть от 7 до 10 символов, при этом каждый символ должен быть случайным образом выбран из диапазона от 33 до 126 в таблице ASCII. <br> 
+			Ваша функция не должна принимать на вход параметры, а возвращать будет сгенерированный пароль. В основной программе вы должны просто вывести созданный случайным образом пароль.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random 
+
+def my():
+    x = random.randint(33, 126)
+    return chr(x)
+
+
+password_len = random.randint(7, 10)
+password = ""
+while password_len != 0:
+    password += my()
+    password_len -= 1
+
+print("%35s" % "Генератор паролей:", password)		
+		</pre>
+	</body>
+</html>
