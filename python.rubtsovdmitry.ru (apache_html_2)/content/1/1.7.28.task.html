@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 28. Следующее простое число. </title>		
+	</head>
+	<body>
+		<h1> 28. Следующее простое число. </h1>
+		<div> <a class="link_task" href="./1.7.28.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Простое число представляет собой число, большее единицы, которое без остатка делится лишь на само себя и единицу. <br> 
+			Напишите функцию для определения того, является ли введенное число простым. Возвращаемое значение должно быть либо True, либо False. В основной программе, как и ожидается, пользователь должен ввести целое число и получить ответ о том, является ли оно простым. <br> 
+			Также программа должна вывести следующее простое число.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_2(digit):    
+    while True:
+        digit += 1
+        temp = 2
+        while temp &lt; digit:            
+            if digit % temp == 0:
+                break
+            elif temp == digit - 1:
+                return digit
+            temp += 1
+
+
+def my(digit):
+    denominator = 2
+    result = False
+    while denominator != digit:
+        if result:
+            break
+        elif digit % denominator == 0:
+            result = True        
+        denominator += 1
+    return result
+
+
+while True:
+    try:
+        digit = int(input("%75s" % "Введите любое положительное число: "))
+        if digit &lt;= 1:
+            print("%74s" % "Вы ввели ноль, один или отрицательное число.")
+            print()
+            continue        
+        else:
+            break
+    except:
+        print("%74s" % "Вы ввели что-то не то.")
+        print()
+
+if my(digit):
+    print("%74s" % "Введённое число составное.", "%44s" % "Ближайшее простое число:", my_2(digit))
+else:
+    print("%74s" % "Введённое число простое.", "%44s" % "Следующее простое число:", my_2(digit))		
+		</pre>
+	</body>
+</html>
