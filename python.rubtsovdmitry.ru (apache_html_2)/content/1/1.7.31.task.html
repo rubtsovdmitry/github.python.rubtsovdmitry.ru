@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 31. Проверка пароля на надежность. </title>		
+	</head>
+	<body>
+		<h1> 31. Проверка пароля на надежность. </h1>
+		<div> <a class="link_task" href="./1.7.31.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			В данном упражнении вам необходимо написать функцию, проверяющую введенный пароль на надежность. <br> 
+			Определим как надежный пароль, состоящий минимум из восьми символов и включающий хотя бы по одной букве в верхнем и нижнем регистрах и как минимум одну цифру.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_5(password):                                                                     # проверка на наличие букв в верхнем регистре
+    result = "ненадёжный"
+    for i in password:
+        if "A" &lt;= i &lt;= "Z":
+            result = "надёжный"
+    return result
+
+
+def my_4(password):                                                                     # проверка на наличие букв в нижнем регистре
+    result = "ненадёжный"
+    for i in password:
+        if "a" &lt;= i &lt;= "z":
+            result = "надёжный"
+    if result == "ненадёжный":
+        return result
+    elif result == "надёжный":        
+        return my_5(password)
+
+
+def my_3(password):                                                                     # проверка на наличие букв в пароле
+    result = "ненадёжный"
+    for i in password:
+        if i.isdigit() == False:
+            result = "надёжный"
+    if result == "ненадёжный":
+        return result
+    elif result == "надёжный":        
+        return my_4(password)
+    
+
+def my_2(password):                                                                     # проверка на наличие цифр в пароле
+    result = "ненадёжный"
+    for i in password:
+        if i.isdigit() == True:
+            result = "надёжный"
+    if result == "ненадёжный":
+        return result
+    elif result == "надёжный":        
+        return my_3(password)
+    
+
+def my(password):                                                                       # проверка на длину пароля
+    good_len = 8
+    test = "надёжный" if len(password) >= good_len else "ненадёжный"   
+    if test == "ненадёжный":
+        return test
+    elif test == "надёжный":        
+        return my_2(password)
+
+
+while True:
+    password = input("%50s" % "Введите ваш пароль: ")
+    rus_alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    test = True
+    for i in password:
+        if i in rus_alphabet or i in rus_alphabet.upper():
+            test = False        
+    if test:
+        break
+    else:
+        print("%49s" % "Вы ввели пароль на русском языке.")
+        print()
+
+print("%49s" % "Ваш пароль:", my(password))		
+		</pre>
+	</body>
+</html>

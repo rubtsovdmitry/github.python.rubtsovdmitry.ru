@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 30. Случайный номерной знак. </title>		
+	</head>
+	<body>
+		<h1> 30. Случайный номерной знак. </h1>
+		<div> <a class="link_task" href="./1.7.30.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Представьте, что в вашем регионе устаревшим является формат номерных автомобильных знаков из трех букв, следом за которыми идут три цифры. 
+			Когда все номера такого шаблона закончились, было решено обновить формат, поставив в начало четыре цифры, а за ними три буквы. <br>
+			Напишите функцию, которая будет генерировать случайный номерной знак. При этом номера в старом и новом форматах должны создаваться примерно с одинаковой вероятностью. В основной программе нужно сгенерировать и вывести на экран случайный номерной знак.	 									
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random 
+
+def new():
+    number = ""
+    min_digit = 1
+    max_digit = 9
+    count = 4
+    while count > 0:
+        x = random.randint(min_digit, max_digit)
+        number += str(x)
+        count -= 1
+    number += " "
+    alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    letters = 33
+    count = 3    
+    while count > 0:
+        x = random.randint(1, letters)
+        number += alphabet[x - 1].upper()
+        count -= 1
+    return number
+
+
+def old():
+    alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    letters = 33
+    count = 3
+    number = ""
+    while count > 0:
+        x = random.randint(1, letters)
+        number += alphabet[x - 1].upper()
+        count -= 1
+    number += " "
+    min_digit = 1
+    max_digit = 9
+    count = 3
+    while count > 0:
+        x = random.randint(min_digit, max_digit)
+        number += str(x)
+        count -= 1
+    return number
+
+
+def my_number():
+    x = random.randint(1, 2)
+    if x == 1:
+        return old()
+    else:
+        return new()
+
+
+print(my_number())		
+		</pre>
+	</body>
+</html>
