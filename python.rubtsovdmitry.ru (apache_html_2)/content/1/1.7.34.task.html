@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 34. Шестнадцатеричная в десятичную. </title>		
+	</head>
+	<body>
+		<h1> 34. Шестнадцатеричная в десятичную. </h1>
+		<div> <a class="link_task" href="./1.7.34.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Перевести число из шестнадцатеричной системы счисления в десятичную.	 					
+			<hr>
+			<a class="link_task" href="https://ru.wikihow.com/переводить-числа-из-шестнадцатеричной-системы-в-двоичную-или-десятичную" target="_blank"> На сайте wikiHow описывается подробный алгоритм перевода. </a>				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def next(digit):
+    global TABLE_DIGITS
+    digit = digit[::-1]
+    amount = 0
+    count = 0
+    for i in digit:
+        temp = [x for x in TABLE_DIGITS if TABLE_DIGITS[x] == i][0] * (16 ** count)
+        count += 1
+        amount += temp
+    return amount
+
+
+def perevod(digit):
+    global TABLE_DIGITS
+    if digit in TABLE_DIGITS.values():
+        result = str([i for i in TABLE_DIGITS if TABLE_DIGITS[i] == digit][0])
+    else:
+        result = str(next(digit))
+    return result
+
+
+TABLE_DIGITS = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F"}
+
+print()
+while True:
+    digit = input("%100s" % "Введите число в шестнадцатиричной системе счисления для перевода в десятичную: ")    
+    try:
+        temp = "-" if digit[0] == "-" else ""
+        digit = digit.removeprefix("-") if digit[0] == "-" else digit
+        digit = perevod(digit)
+        print()
+        break
+    except:
+        print("%99s" % "Вы ввели что-то не то.")
+        print()
+
+print("%99s" % "Ваше число в шестнадцатиричной системе счисления:", (temp + str(digit)))
+print()		
+		</pre>
+	</body>
+</html>
