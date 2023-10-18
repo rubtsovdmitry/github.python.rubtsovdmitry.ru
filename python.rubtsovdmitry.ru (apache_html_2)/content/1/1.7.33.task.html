@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 33. Десятичная в шестнадцатеричную. </title>		
+	</head>
+	<body>
+		<h1> 33. Десятичная в шестнадцатеричную. </h1>
+		<div> <a class="link_task" href="./1.7.33.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Перевести число из десятичной системы счисления в шестнадцатеричную.	 					
+			<hr>
+			<a class="link_task" href="https://ru.wikihow.com/преобразовать-десятичное-число-в-шестнадцатеричное-число" target="_blank"> На сайте wikiHow описывается подробный алгоритм перевода (2 способа). </a>				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def for_dict(digit):                                                                                                                                            # функция переводит по сути модуль числа
+    global TABLE_DIGITS
+    result = ""
+    while digit > 15:
+        next = digit - ((digit // 16) * 16)
+        result += TABLE_DIGITS[next]
+        digit //= 16
+    result += TABLE_DIGITS[digit]
+    return result[::-1]
+
+
+def third(digit):                                                                                                                                               # функция переводит числа, которые меньше 15
+    result = for_dict(digit * (-1))
+    result = "-" + result
+    return result
+
+
+def second(digit):                                                                                                                                              # функция переводит числа, которые больше 15
+    result = for_dict(digit)
+    return result
+
+
+def first(digit):                                                                                                                                               # функция переводит число, если оно в диапазоне от -15 до 15
+    global TABLE_DIGITS
+    return TABLE_DIGITS[digit]
+
+
+TABLE_DIGITS = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F"}
+
+print()
+while True:
+    digit = input("%100s" % "Введите целое число в десятичной системе счисления для перевода в шестнадцатиричную: ")
+    try:
+        digit = int(digit)        
+        print()
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+        print()
+
+if 0 &lt;= digit &lt;= 15:
+    digit = first(digit)
+elif -15 &lt;= digit &lt; 0:
+    digit = "-" + first(digit * (-1))
+elif digit > 15:
+    digit = second(digit)
+elif digit &lt; -15:
+    digit = third(digit)
+
+print("%99s" % "Ваше число в шестнадцатиричной системе счисления:", digit)
+print()		
+		</pre>
+	</body>
+</html>
