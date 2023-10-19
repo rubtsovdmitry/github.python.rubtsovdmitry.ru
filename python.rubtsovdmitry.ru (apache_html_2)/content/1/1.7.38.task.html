@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 38. Переводим меры. </title>		
+	</head>
+	<body>
+		<h1> 38. Переводим меры. </h1>
+		<div> <a class="link_task" href="./1.7.38.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Во многих кулинарных книгах до сих пор можно встретить рецепты, в которых ингредиенты отмеряются стаканами, чайными и столовыми ложками. 
+			И хотя при наличии этих нехитрых предметов таким рецептам следовать довольно удобно, бывает трудно быстро преобразовать подобные меры при приготовлении рождественского ужина на огромную семью. <br>
+			Например, если в рецепте сказано взять четыре столовые ложки того или иного ингредиента, то при увеличении выхода в четыре раза можно просто отсчитать 16 столовых ложек. Однако гораздо проще было бы привести эту меру к одному стакану. <br>
+			Напишите функцию, выражающую заданный объем ингредиентов с использованием минимально возможных замеров. 
+			Функция должна принимать в качестве параметра количество единиц измерения, а также их тип (стакан, столовая или чайная ложка). 
+			На выходе мы должны получить строку, представляющую указанное количество вещества, с задействованием минимального количества действий и предметов. Например, если на вход функции вы подали объем, равный 59 чайным ложкам, возвращенная строка должна быть такой: «1 стакан, 3 столовые ложки, 2 чайные ложки». <br>
+			Один стакан вмещает 16 столовых ложек, а одна столовая ложка эквивалентна трем чайным ложкам.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_cook_measure(cups, tablespoons, teaspoons):
+    tablespoons_in_cup = 16
+    teaspoons_in_tablespoons = 3
+    teaspoons_in_cups = teaspoons_in_tablespoons * tablespoons_in_cup
+    
+    teaspoons = teaspoons + teaspoons_in_tablespoons * tablespoons + teaspoons_in_cups * cups
+
+    cups_result = teaspoons // teaspoons_in_cups
+    tablespoons_result = (teaspoons - cups_result * teaspoons_in_cups) // teaspoons_in_tablespoons
+    teaspoons_result = (teaspoons - cups_result * teaspoons_in_cups - tablespoons_result * teaspoons_in_tablespoons)    
+    return (cups_result, tablespoons_result, teaspoons_result)
+
+
+while True:
+    cups = input("%50s" % "Введите количество стаканов: ")
+    tablespoons = input("%50s" % "Введите количество столовых ложек: ")
+    teaspoons = input("%50s" % "Введите количество чайных ложек: ")
+    print()
+    try:
+        cups = int(cups)
+        tablespoons = int(tablespoons)
+        teaspoons = int(teaspoons)
+        if cups &lt; 0 or tablespoons &lt; 0 or teaspoons &lt; 0:
+            print(("%49s" % "Вы ввели отрицательные значения."))
+            continue
+        break
+    except:
+        print("%49s" % "Вы допустили ошибку при вводе.")
+
+result = my_cook_measure(cups, tablespoons, teaspoons)
+
+print("%49s" % f"Количество чашек: {result[0]}", "%49s" % f"Количество столовых ложек: {result[1]}", "%49s" % f"Количество чайных ложек: {result[2]}")		
+		</pre>
+	</body>
+</html>
