@@ -41,7 +41,7 @@ while True:
         year = int(year)
         month = int(month)
         day = int(day)
-        if year < 0 or month < 0 or day < 0:
+        if year &lt; 0 or month &lt; 0 or day &lt; 0:
             print(("%99s" % "Вы ввели отрицательные значения."))
             continue
         result = datetime.date(year, month, day)                                                    # так проверим существует ли эта дата (29 февраля)
