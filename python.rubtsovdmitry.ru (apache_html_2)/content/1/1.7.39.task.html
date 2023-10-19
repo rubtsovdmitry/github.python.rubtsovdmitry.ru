@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 39. Магические даты. </title>		
+	</head>
+	<body>
+		<h1> 39. Магические даты. </h1>
+		<div> <a class="link_task" href="./1.7.39.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Магическими называются даты, в которых произведение дня и месяца составляет последние две цифры года. Например, 10 июня 1960 года – магическая дата, поскольку 10 * 6 = 60. <br>
+			Напишите функцию, определяющую, является ли введенная дата магической.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import datetime
+
+def my_magic_date(result, day, month):
+    mod = int(str(result)[2:4])
+    if (day * month) == mod:
+        return True
+
+
+while True:
+    year = input("%100s" % "Введите год (1, 2, ... 2023): ")
+    month = input("%100s" % "Введите месяц (1, 2 ... 12): ")
+    day = input("%100s" % "Введите день (1, 2 ... 31): ")
+    print()
+    try:
+        year = int(year)
+        month = int(month)
+        day = int(day)
+        if year < 0 or month < 0 or day < 0:
+            print(("%99s" % "Вы ввели отрицательные значения."))
+            continue
+        result = datetime.date(year, month, day)                                                    # так проверим существует ли эта дата (29 февраля)
+        break
+    except:
+        print("%99s" % "Вы допустили ошибку при вводе или такой даты не существует.")
+
+result_2 = my_magic_date(result, day, month)
+
+if result_2:
+    print("%99s" % f"Дата {result} магическая.")    
+else:
+    print("%99s" % f"Дата {result} не магическая.")		
+		</pre>
+	</body>
+</html>
