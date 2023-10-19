@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 36. Максимальное сокращение дробей. </title>		
+	</head>
+	<body>
+		<h1> 36. Максимальное сокращение дробей. </h1>
+		<div> <a class="link_task" href="./1.7.36.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите функцию, принимающую на вход два целочисленных параметра, представляющих числитель и знаменатель дроби. 
+			В теле функции должно выполняться максимально возможное сокращение дроби, а полученные в итоге числитель и знаменатель должны быть возвращены исходной программе. <br>
+			Например, если на вход функции передать числа 6 и 63, числитель и знаменатель итоговой дроби должны быть 2 и 21. <br>
+			В основной программе нужно запросить у пользователя числитель и знаменатель исходной дроби, передать их в функцию и вывести на экран результат.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_simplify(numerator, denomenator):
+    min_value = min(numerator, denomenator)
+    divider = 2
+    while divider &lt;= min_value:
+        if numerator % divider == 0 and denomenator % divider == 0:
+            numerator /= divider; denomenator /= divider; min_value /= divider            
+            divider = 2
+        else:
+            divider += 1
+    return (int(numerator), int(denomenator))   
+
+
+while True:
+    numerator = input("%100s" % "Введите числитель дроби (целое число): ")
+    denomenator = input("%100s" % "Введите знаменатель дроби (целое число): ")
+    print()
+    try:
+        numerator = int(numerator)
+        denomenator = int(denomenator)
+        if denomenator == 0:
+            print(("%99s" % "Знаменатель не может быть равным нулю."))
+            continue
+        break
+    except:
+        print("%99s" % "Вы допустили ошибку при вводе.")
+
+if numerator in [0, 1, -1] or denomenator in [1, -1]:
+    result = (numerator, denomenator)
+else:
+    result = my_simplify(numerator, denomenator)
+
+print("%99s" % "Сокращённая дробь:", f"{result[0]}/{result[-1]}")		
+		</pre>
+	</body>
+</html>
