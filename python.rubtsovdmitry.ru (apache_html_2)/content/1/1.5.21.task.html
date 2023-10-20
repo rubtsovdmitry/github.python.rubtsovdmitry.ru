@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 21. Список в предложение. </title>		
+	</head>
+	<body>
+		<h1> 21. Список в предложение. <span class="a_marker"> (в коде есть строки из следующих тем: "библиотеки"). </span> </h1>
+		<div> <a class="link_task" href="./1.5.21.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Напишите функцию, получающую список в качестве аргумента и возвращающую строку с расставленными запятыми и буквой "и". Предложение должно начинаться с заглавной буквы и заканчиваться точкой. <br>
+			Список для обработки: ["spoon", "fork", "knife", "cup", "jug"].
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my(things):
+    result = str()
+    for index, value in enumerate(things):
+        if index != (len(things) - 1):
+            result += (value + ", ")
+        else:            
+            result = result.removesuffix(", ")         
+            result += (" and " + value + ".")
+    temp = result[0]
+    result = temp.upper() + result.removeprefix(temp)
+    return result
+
+
+things = ["spoon", "fork", "knife", "cup", "jug"]
+result = my(things)
+print(result)
+		</pre>												
+	</body>
+</html>
