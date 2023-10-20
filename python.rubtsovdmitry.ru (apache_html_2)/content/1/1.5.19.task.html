@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 19. Вывести случайный элемент из списка. </title>		
+	</head>
+	<body>
+		<h1> 19. Вывести случайный элемент из списка <span class="a_marker"> (в коде есть строки из следующих тем: "библиотеки"). </span> </h1>
+		<div> <a class="link_task" href="./1.5.19.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Вывести случайный элемент из списка. <br>
+			Пример списка: a = ["x", "y", "z", "a", "b", "c"]		
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random
+
+a = ["x", "y", "z", "a", "b", "c"]
+print(a[random.randint(0, len(a))])
+		</pre>												
+	</body>
+</html>
