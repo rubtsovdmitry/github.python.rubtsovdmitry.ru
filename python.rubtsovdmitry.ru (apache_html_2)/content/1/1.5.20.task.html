@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 20. Пика. </title>		
+	</head>
+	<body>
+		<h1> 20. Пика. </h1>
+		<div> <a class="link_task" href="./1.5.20.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Нужно создать с помощью вложенных списков двумерный массив и вывести пику из "x". Затем повернуть её, три раза.
+			<pre>
+   №1                      №2                  №3              №4
+   x                       xxxxxxxxxxxxx               x             x  
+   xx                       xxxxxxxxxxx               xx             x  
+   xxx                       xxxxxxxxx               xxx             x  
+   xxxx                       xxxxxxx               xxxx            xxx   
+   xxxxx                       xxxxx               xxxxx           xxxxx
+   xxxxxx                       xxx               xxxxxx          xxxxxxx 
+   xxxxxxxxx                     x             xxxxxxxxx         xxxxxxxxx  
+   xxxxxx                        x                xxxxxx        xxxxxxxxxxx
+   xxxxx                         x                 xxxxx       xxxxxxxxxxxxx
+   xxxx                                             xxxx
+   xxx                                               xxx
+   xx                                                 xx
+   x                                                   x			
+			</pre>		
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_list = [["x", " ", " ", " ", " ", " ", " ", " ", " "],\
+           ["x", "x", " ", " ", " ", " ", " ", " ", " "],\
+           ["x", "x", "x", " ", " ", " ", " ", " ", " "],\
+           ["x", "x", "x", "x", " ", " ", " ", " ", " "],\
+           ["x", "x", "x", "x", "x", " ", " ", " ", " "],\
+           ["x", "x", "x", "x", "x", "x", " ", " ", " "],\
+           ["x", "x", "x", "x", "x", "x", "x", "x", "x"],\
+           ["x", "x", "x", "x", "x", "x", " ", " ", " "],\
+           ["x", "x", "x", "x", "x", " ", " ", " ", " "],\
+           ["x", "x", "x", "x", " ", " ", " ", " ", " "],\
+           ["x", "x", "x", " ", " ", " ", " ", " ", " "],\
+           ["x", "x", " ", " ", " ", " ", " ", " ", " "],\
+           ["x", " ", " ", " ", " ", " ", " ", " ", " "]]
+
+for a in my_list:
+    for b in a:
+        print(b, end="")
+    print()
+print()
+print()
+print()
+
+####################################
+
+width = len(my_list)
+height = len(my_list[0])
+for a in range(height):
+    for b in range(width):
+        print(my_list[b][a], end="")
+    print()
+print()
+print()
+print()
+
+####################################
+
+my_list_2 = []
+for a in my_list:
+    my_list_2.append(a[::-1])
+
+for a in my_list_2:
+    for b in a:
+        print(b, end="")
+    print()
+print()
+print()
+print()
+
+####################################
+
+width = len(my_list_2)
+height = len(my_list_2[0])
+for a in range(height):
+    for b in range(width):
+        print(my_list_2[b][a], end="")
+    print()
+print()
+print()
+print()
+		</pre>												
+	</body>
+</html>
