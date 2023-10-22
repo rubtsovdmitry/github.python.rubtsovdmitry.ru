@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 28. Список собственных делителей. </title>		
+	</head>
+	<body>
+		<h1> 28. Список собственных делителей. </h1>
+		<div> <a class="link_task" href="./1.5.28.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Собственным делителем числа называется всякий его делитель, отличный от самого числа. <br>
+			Программа должна составить список всех собственных делителей заданного числа и вывести на экран все делители.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+while True:
+    digit = input("%100s" % "Введите целое число: ")
+    try:
+        digit = int(digit)
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+print()
+
+result_list = []
+denominator = digit - 1
+while denominator >= 1:
+    if digit % denominator == 0:
+        result_list.append(denominator)
+    denominator -= 1
+
+for i in result_list:
+    print("%99s" % i)
+		</pre>												
+	</body>
+</html>
