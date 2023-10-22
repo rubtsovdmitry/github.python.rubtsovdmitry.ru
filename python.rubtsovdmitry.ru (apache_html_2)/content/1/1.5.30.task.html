@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 30. Только слова. </title>		
+	</head>
+	<body>
+		<h1> 30. Только слова. </h1>
+		<div> <a class="link_task" href="./1.5.30.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			В данном упражнении вы напишете программу, которая будет выделять слова из строки, введенной пользователем. <br>
+			В качестве результата она должна возвращать список слов из строки с удаленными знаками препинания, в число которых должны входить точки, запятые, восклицательный и вопросительный знаки, дефисы, апострофы, двоеточия, точки с запятыми и кавычки. 
+			При этом не нужно избавляться от знаков препинания, стоящих внутри слова, таких как апостроф, служащий в английском языке для обозначения сокращений. <br> 
+			Например, если на вход дать строку "Contractions include: don’t, isn’t, and wouldn’t.", должен вернуться следующий список: ["Contractions", "include", "don’t", "isn’t", "and", "wouldn’t"].
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+proposal = input("%50s" % "Введите предложение: ")
+print()
+
+proposal = proposal.replace(".", "")
+proposal = proposal.replace(",","")
+proposal = proposal.replace("!","")
+proposal = proposal.replace("?","")
+proposal = proposal.replace("-","")
+proposal = proposal.replace(" '","")
+proposal = proposal.replace("' ","")
+proposal = proposal.replace(":","")
+proposal = proposal.replace(";","")
+proposal = proposal.replace("\"","")
+
+proposal = proposal.split(" ")
+print(proposal)
+		</pre>												
+	</body>
+</html>
