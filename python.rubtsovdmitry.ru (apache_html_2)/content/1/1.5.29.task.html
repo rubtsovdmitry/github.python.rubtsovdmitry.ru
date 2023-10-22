@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 29. Совершенные числа. </title>		
+	</head>
+	<body>
+		<h1> 29. Совершенные числа. </h1>
+		<div> <a class="link_task" href="./1.5.29.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Целое число n называется совершенным, если сумма всех его собственных делителей равна самому числу n. Например, 28 – это совершенное число, поскольку его собственными делителями являются 1, 2, 4, 7 и 14, а 1 + 2 + 4 + 7 + 14 = 28. <br>
+			Напишите программу для определения того, является ли заданное число совершенным. Программа должна выводить совершенные числа в режиме реального времени (в цикле print). <br>
+			Алгоритм с каждым последующим числом выполняет всё больше и больше операций. Ваш компьютер будет выполнять поиск совершенного числа больше 8128 бесконечно долго. Время выполнения алгоритма растёт с O(n!). <br>
+			Кстати, следующее совершенное число равно 33_550_336.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+while True:
+    digit = input("%100s" % "Введите до какого числа будем искать совершенные числа (к примеру, 10000): ")
+    try:
+        digit = int(digit)
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+print()
+
+result_list = []
+diapazon = range(1, digit + 1)
+for i in diapazon:                                          # проверим каждую цифру на совершенство
+    temp_list_of_denominators = []
+    for i2 in range(1, i):                                  # будем искать делители у каждой цифры        
+        if i % i2 == 0:
+            temp_list_of_denominators.append(i2)
+    if sum(temp_list_of_denominators) == i:
+        result_list.append(i)
+        print("%99s" % f"Добавлено число: {i}.")
+		</pre>												
+	</body>
+</html>
