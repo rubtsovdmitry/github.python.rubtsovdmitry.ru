@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 24. Обратный порядок. </title>		
+	</head>
+	<body>
+		<h1> 24. Обратный порядок. </h1>
+		<div> <a class="link_task" href="./1.5.24.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Напишите программу, которая будет запрашивать у пользователя целочисленные значения и сохранять их в виде списка. Индикатором окончания ввода значений должна служить пустая строка. Затем программа должна вывести на экран все введенные пользователем числа в порядке убывания.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_list = []
+while True:
+    digit = input("%100s" % "Введите число для заполнения списка (для отмены просто нажмите &lt;Enter>): ")
+    if digit == "":
+        break
+    my_list.append(int(digit))
+my_list.sort(reverse=True)
+print("Числа в порядке убывания: ", end="")
+for i in my_list:
+    print(i, " ", end="")
+print()
+		</pre>												
+	</body>
+</html>
