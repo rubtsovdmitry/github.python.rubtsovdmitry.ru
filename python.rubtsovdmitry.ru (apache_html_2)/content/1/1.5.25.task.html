@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 25. Жизнь. </title>		
+	</head>
+	<body>
+		<h1> 25. Жизнь. <span class="a_marker"> (в коде есть строки из следующих тем: "функции"). </span> </h1>
+		<div> <a class="link_task" href="./1.5.25.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			При анализе собранных по результатам научных экспериментов данных зачастую возникает необходимость избавиться от экстремальных значений, прежде чем продолжать двигаться дальше. <br>
+			Напишите функцию, которая модернизирует список с исключенными из него наибольшим и наименьшим значениями и возвращающую его в качестве результата. Порядок следования элементов в измененном списке не обязательно должен в точности совпадать с источником.
+			Если пользователь введет менее четырех чисел, должно быть отображено соответствующее сообщение об ошибке.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_f(my_list):
+     my_list.remove(min(my_list))
+     my_list.remove(max(my_list))
+     return sorted(my_list)
+
+my_list = []
+while True:
+    digit = input("%100s" % "Введите число (чтобы прекратить введите \"Enter\"): ")
+    try:
+        if len(digit) > 0:
+              digit = float(digit)
+              my_list.append(digit)        
+        elif len(digit) == 0 and len(my_list) &lt; 4:             
+             print("%99s" % "Вы патаетесь отменить ввод, когда список не достиг 4 значений.")             
+        elif len(digit) == 0 and len(my_list) >= 4:             
+             break                  
+    except:
+        print("%99s" % "Вы ввели не число.")
+
+print("%99s" % my_f(my_list))
+		</pre>												
+	</body>
+</html>
