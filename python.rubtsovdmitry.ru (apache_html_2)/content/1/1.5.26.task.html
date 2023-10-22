@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 26. Избавляемся от дубликатов. </title>		
+	</head>
+	<body>
+		<h1> 26. Избавляемся от дубликатов. </h1>
+		<div> <a class="link_task" href="./1.5.26.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			В данном упражнении вам предстоит разработать программу, в которой у пользователя будет запрошен список слов, пока он не оставит строку ввода пустой.
+			После этого на экране должны быть показаны слова, введенные пользователем, но без повторов, – каждое по одному разу. При этом слова должны быть отображены в том же порядке, в каком их вводили с клавиатуры. 
+			Например, если пользователь на запрос программы введет следующий список слов: <br>
+			- first <br>
+			- second <br>
+			- first <br>
+			- third <br>
+			- second <br>
+			программа должна вывести: <br>
+			- first <br>
+			- second <br>
+			- third
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_list = []
+while True:
+     word = input("%100s" % "Введите слово (для отмены просто введите \"Enter\"): ")
+     if word == "":
+          break
+     my_list.append(word)
+
+result_list = []
+for i in my_list:
+     if i not in result_list:
+          result_list.append(i)
+
+print()
+for i in result_list:
+     print("%99s" % i)
+		</pre>												
+	</body>
+</html>
