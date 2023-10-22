@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 27. Отрицательные, положительные и нули. </title>		
+	</head>
+	<body>
+		<h1> 27. Отрицательные, положительные и нули. </h1>
+		<div> <a class="link_task" href="./1.5.27.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Напишите программу, запрашивающую у пользователя целые числа, пока он не оставит строку ввода пустой. 
+			После окончания ввода на экран должны быть выведены сначала все отрицательные числа, которые были введены, затем нулевые и только после этого положительные. 
+			Внутри каждой группы числа должны отображаться в той последовательности, в которой были введены пользователем. 
+			Например, если он ввел следующие числа: 3, -4, 1, 0, -1, 0 и -2, вывод должен оказаться таким: -4, -1, -2, 0, 0, 3 и 1. <br>
+			Каждое значение должно отображаться на новой строке.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_list = []
+while True:
+     digit = input("%100s" % "Введите число (для отмены введите \"Enter\"): ")
+     try:
+        if digit == "":
+            break
+        digit = float(digit)
+        my_list.append(digit)
+     except:
+        print(("%99s" % "Вы ввели не число: "))
+print()
+result_list = []
+for i in my_list:
+    if i &lt; 0:
+        result_list.append(i)
+for i in my_list:
+    if i == 0:
+        result_list.append(i)
+for i in my_list:
+    if i > 0:
+        result_list.append(i)
+for i in result_list:
+    print("%99s" % i)
+		</pre>												
+	</body>
+</html>
