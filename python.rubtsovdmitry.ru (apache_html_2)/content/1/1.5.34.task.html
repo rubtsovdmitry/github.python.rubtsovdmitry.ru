@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 34. Поросячья латынь. </title>		
+	</head>
+	<body>
+		<h1> 34. Поросячья латынь. </h1>
+		<div> <a class="link_task" href="./1.5.34.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			«Поросячьей латынью» называют молодежный жаргонный язык, производный от английского. 
+			И хотя корни этого новообразованного языка неизвестны, упоминание о нем есть как минимум в двух документах, датированных XIX веком, а это значит, что ему уже больше сотни лет. 
+			Для перевода слова с английского на «поросячью латынь» нужно сделать следующее: <br>
+			- если слово начинается с согласной буквы (включая y), то все буквы с начала слова и до первой гласной (за исключением y) переносятся в конец слова и дополняются сочетанием букв ay. Например, слово computer будет преобразовано в omputercay, слово think – в inkthay, а слово yes – в yesay; <br>
+			- если слово начинается с гласной буквы (не включая y), к концу слова просто добавляется way. К примеру, слово algorithm превратится в algorithmway, а office – в officeway. <br>
+			Напишите программу, которая будет запрашивать у пользователя строку. После этого она должна переводить введенный текст на «поросячью латынь» и выводить его на экран.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+proposal = input("%100s" % "Введите предложение: ")
+proposal = proposal.lower()
+proposal = proposal.replace(".", "")
+proposal = proposal.replace(",","")
+proposal = proposal.replace("!","")
+proposal = proposal.replace("?","")
+proposal = proposal.replace("-","")
+proposal = proposal.replace(" '","")
+proposal = proposal.replace("' ","")
+proposal = proposal.replace(":","")
+proposal = proposal.replace(";","")
+proposal = proposal.replace("\"","")
+my_list = proposal.split(" ")   
+
+glasnie = ["a", "e", "i", "o", "u"]
+soglasnie = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"]
+result = []
+for i in my_list:
+    if i[0] in glasnie:
+        result.append(i + "way")
+    else:
+        temp = str()
+        temp_result = str()
+        flag = 0
+        for x in i:            
+            if x in soglasnie and flag == 0:
+                temp += x
+            elif x not in soglasnie and flag == 0:
+                flag = 1
+                temp_result += x
+            else:
+                temp_result +=x
+        temp_result += (temp + "ay")                    
+        result.append(temp_result)
+result = " ".join(result)
+print("%99s" % result)
+		</pre>												
+	</body>
+</html>
