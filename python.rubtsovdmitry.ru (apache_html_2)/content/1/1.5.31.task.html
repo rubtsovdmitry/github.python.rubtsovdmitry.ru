@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 31. Словесные палиндромы. </title>		
+	</head>
+	<body>
+		<h1> 31. Словесные палиндромы. </h1>
+		<div> <a class="link_task" href="./1.5.31.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Ранее в упражнениях мы уже имели дело со словами, являющимися палиндромами. 
+			Тогда мы анализировали буквы в слове с начала и конца, игнорируя пробелы и знаки препинания, чтобы понять, совпадает ли его написание в прямом и обратном направлениях. 
+			И хотя палиндромами обычно называют слова, это понятие вполне можно расширить. 
+			Например, английская фраза «Is it crazy how saying sentences backwards creates backwards sentences saying how crazy it is?» является словесным палиндромом, поскольку если читать ее по словам, игнорируя при этом знаки препинания и заглавные буквы, в обоих направлениях она будет звучать одинаково. 
+			Еще примеры английских словесных палиндромов: «Herb the sage eats sage, the herb» и «Information school graduate seeks graduate school information». <br>
+			Напишите программу, которая будет запрашивать строку у пользователя и оповещать его о том, является ли она словесным палиндромом. Не забывайте игнорировать знаки препинания и регистр букв при выявлении результата.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+proposal = input("%50s" % "Введите предложение: ")
+print()
+
+proposal = proposal.replace(".", "")
+proposal = proposal.replace(",","")
+proposal = proposal.replace("!","")
+proposal = proposal.replace("?","")
+proposal = proposal.replace("-","")
+proposal = proposal.replace(" '","")
+proposal = proposal.replace("' ","")
+proposal = proposal.replace(":","")
+proposal = proposal.replace(";","")
+proposal = proposal.replace("\"","")
+proposal = proposal.lower()
+
+proposal = proposal.split(" ")
+if proposal == proposal[::-1]:
+    print("%50s" % "Предложение является словесным палинромом.")
+else:
+    print("%50s" % "Предложение не является словесным палинромом.")
+		</pre>												
+	</body>
+</html>
