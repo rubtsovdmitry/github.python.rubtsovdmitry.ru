@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 41. Лото. </title>		
+	</head>
+	<body>
+		<h1> 41. Лото. </h1>
+		<div> <a class="link_task" href="./1.7.41.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Посмотрите в интернете примеры билетов лото: <br>
+			- на каждом билете три строки с 9 полями <br>
+			- на каждой строке заполнены только 5 полей. <br>
+			Сначала нужно сгенерировать выигрышную комбинацию (строку). Затем сгенерировать билет с тремя другими строками. 
+			И генерировать билеты до того, как на одном из них не выпадет эта выигрышная комбинация. 
+			После получения этого билета нужно вывести на экран, какой он по счёту. А также вывести на экран какая строка в билете выпала: верх, середина или низ. <br>
+			i5-11600k выполнял эту задачу около 5 минут.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random
+
+# функция определяет, какие цифры будут в полях
+def my_digit(poryadok):
+    temp = {"0":range(1, 10), "1":range(10, 20), "2":range(20, 30), "3":range(30, 40), "4":range(40, 50), "5":range(50, 60), "6":range(60, 70), "7":range(70, 80), "8":range(80, 91)}
+    return random.randint(temp[poryadok][0], temp[poryadok][-1])
+
+
+# функция определяет, какие поля будут заполнены
+def my_fields():
+    win_dict = {"0":0, "1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0, "8":0}
+    count = 1
+    while count < 6:
+        poryadok = str(random.randint(0, 8))
+        if win_dict[poryadok] != 0:
+            continue
+        win_dict[poryadok] = my_digit(poryadok)
+        count += 1
+    return win_dict
+
+
+# функция генерирует билет
+def generation_ticket():
+    return [my_fields(), my_fields(), my_fields()]
+
+
+# генерация выигрышной строки
+win_generate_str_with_fields = my_fields()
+
+
+# генерация билета
+ticket = generation_ticket()
+# генерация комбинаций пока не выпадет выигрышная
+count = 1
+while win_generate_str_with_fields not in ticket:
+    ticket = generation_ticket()
+    count += 1
+
+# проверим верх, середина или низ
+up_middle_down = ticket.index(win_generate_str_with_fields)
+if up_middle_down == 0:
+    result = "Верх"
+elif up_middle_down == 1:
+    result = "Середина"
+elif up_middle_down == 2:
+    result = "Низ"
+
+print(f"Выпал выигрышный билет с {count}-й попытки.")
+print(f"На билете совпал(а): {result}.")		
+		</pre>
+	</body>
+</html>
