@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 33. Форматирование списка. </title>		
+	</head>
+	<body>
+		<h1> 33. Форматирование списка. </h1>
+		<div> <a class="link_task" href="./1.5.33.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Обычно при написании перечислений и списков мы разделяем их элементы запятыми, а перед последним ставим союз «и», как показано ниже: <br>
+			- яблоки <br>
+			- яблоки и апельсины <br>
+			- яблоки, апельсины и бананы <br>
+			- яблоки, апельсины, бананы и лимоны <br>
+			Напишите программу, которая будет спрашивать слова и возвращать собранную строку из них в описанной выше манере.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_list = []
+while True:
+    proposal = input("%100s" % "Введите предложение (просто \"Enter\" для отмены): ")
+    if proposal == "":
+        break
+    if len(my_list) == 0:
+        my_list.append(proposal)
+    else:
+        my_list_len = len(my_list)
+        if my_list_len == 1:
+            my_list.append("и")            
+            my_list.append(proposal)
+        elif my_list_len >= 3:
+            my_list[-3] = my_list[-3] + ","
+            my_list.pop(-2)
+            my_list.append("и")            
+            my_list.append(proposal)
+
+a = " "
+result = a.join(my_list)
+print(result)
+		</pre>												
+	</body>
+</html>
