@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 42. Инфиксная запись – в постфиксную. </title>		
+	</head>
+	<body>
+		<h1> 42. Инфиксная запись – в постфиксную. <span class="a_marker"> (в коде есть строки из следующих тем: "функции"). </span> </h1>
+		<div> <a class="link_task" href="./1.5.42.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Математические выражения часто записываются в инфиксной форме (infix form), когда оператор ставится между операндами, с которыми взаимодействует. 
+			И хотя такая форма записи наиболее распространена, сущест­вует и другая, именуемая постфиксной (postfix form), в которой оператор ставится после операндов. 
+			Например, инфиксной форме записи выражения 3 + 4 будет соответствовать постфиксный вариант 3 4 +. <br>
+			Основываясь на прошлой программе составить такой же список только с постфиксной записью оператора.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_f3(uno_list):
+    result_list = []
+    znaki = ["*", "/", "^", "-", "+"]
+    u = ["u-", "u+"]    
+    i_temp = ""
+    for i in uno_list:
+        if i not in znaki and i_temp == "":
+            result_list.append(i)       
+        elif i in znaki:
+            i_temp = i
+        elif i not in znaki and i_temp != "" and i in u:
+            result_list.append(i)     
+        elif i not in znaki and i_temp != "":
+            result_list.append(i)
+            result_list.append(i_temp)
+            i_temp = ""
+    return result_list
+
+
+def my_f2(result_list):
+    uno_list = []
+    znaki = ["*", "/", "^", "-", "+"]
+    znaki_2 = ["-", "+"]
+    temp = ""
+    for index, i in enumerate(result_list):
+        if index == 0 and i in znaki_2:
+            uno_list.append("u" + i)
+            temp = i
+        elif i not in znaki_2:
+            uno_list.append(str(i))
+            temp = i
+        elif i in znaki_2 and temp in znaki:
+            uno_list.append("u" + i)
+            temp = i
+        elif i in znaki_2 and temp not in znaki:
+            uno_list.append(i)
+            temp = i    
+    return my_f3(uno_list)
+
+
+def my_f(digit):
+    result_list = []
+    znaki = ["*", "/", "^", "-", "+"]
+    temp = ""
+    for i in digit:
+        if i == " ":
+            pass
+        elif i in znaki:
+            result_list.append(temp)
+            result_list.append(i)
+            temp = ""
+        elif i not in znaki:
+            i = float(i)
+            i = str(i)
+            temp += i
+    if len(temp) > 0:
+        result_list.append(float(temp))
+    result_list = [i for i in result_list if i != ""]
+    return (my_f2(result_list))
+        
+
+# ввод данных
+while True:
+    digit = input("%100s" % "Введите математическое выражение: ")
+    try:
+        result_list = my_f(digit)         
+        break
+    except:
+        print("%99s" % "Вы ввели не цифры с операторами.")
+        print()
+
+print(result_list)
+		</pre>												
+	</body>
+</html>
