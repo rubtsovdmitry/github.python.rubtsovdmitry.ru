@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 38. Список уже отсортирован? </title>		
+	</head>
+	<body>
+		<h1> 38. Список уже отсортирован? </h1>
+		<div> <a class="link_task" href="./1.5.38.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Программа должна спрашивать числа, из которых должен быть собран список. <br>
+			Дальше без сортировки с помощью циклов и условий нужно определить какой это список, отсортированный или нет, или все элементы списка равны.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+my_list = []
+while True:
+    digit = input("%100s" % "Введите целое число, которое будет элементом списка (для отмены просто нажать \"Enter\"): ")
+    if digit == "":
+        break
+    else:        
+        try:
+            digit = int(digit)
+            my_list.append(digit)                    
+        except:
+            print("%99s" % "Вы ввели не цифры.")
+ 
+if len(my_list) == 0:
+    print("%99s" % "У вас пустой список.")
+elif len(my_list) == 1:
+    print("%99s" % "ваш список содержит всего один элемент.")
+elif len(my_list) > 1:
+    flag_up = 1
+    flag_down = 1
+    flag_middle = 1
+    temp = my_list[0]
+    for i in my_list:
+        if i > temp:
+            flag_down = 0
+            flag_middle = 0            
+            temp = i
+        if i == temp:
+            pass        
+        if i &lt; temp:
+            flag_up = 0
+            flag_middle = 0
+            temp = i    
+    if my_list[0] == my_list[-1] and flag_middle == 1:
+        print("%99s" % "Все элементы списка равны.")
+    elif flag_up == 1:
+        print("%99s" % "Все элементы в списке отсортированы по возрастанию.")
+    elif flag_down == 1:
+        print("%99s" % "Все элементы в списке отсортированы по убыванию.")
+    else:
+        print("%99s" % "Список не отсортирован.")
+		</pre>												
+	</body>
+</html>

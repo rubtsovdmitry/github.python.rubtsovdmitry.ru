@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 39. Подсчитать элементы в списке. </title>		
+	</head>
+	<body>
+		<h1> 39. Подсчитать элементы в списке. </h1>
+		<div> <a class="link_task" href="./1.5.39.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			В стандартной библиотеке языка Python присутствует функция count, позволяющая подсчитать, сколько раз определенное значение встречается в списке. 
+			В данном упражнении программа должна будет подсчитывать количество элементов в списке, значения которых больше или равны заданному минимальному порогу и меньше или равны максимальному. 
+			Входные: список, минимальная граница и максимальная граница.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+my_list = []
+while True:
+    digit = input("%100s" % "Введите число, которое будет элементом списка (для отмены просто нажать \"Enter\"): ")
+    if digit == "":
+        break
+    else:        
+        try:
+            digit = float(digit)
+            my_list.append(digit)                    
+        except:
+            print("%99s" % "Вы ввели не цифры.")
+while True:
+    small = input("%100s" % "Введите число, нижнюю границу диапазона: ")    
+    try:
+        small = float(small)             
+        break
+    except:
+        print("%99s" % "Вы ввели не цифры.")
+while True:
+    big = input("%100s" % "Введите число, верхнюю границу диапазона: ")    
+    try:
+        big = float(big)             
+        break
+    except:
+        print("%99s" % "Вы ввели не цифры.")
+#######################################################################################################################################################
+result_list = [i for i in my_list if small &lt;= i &lt;= big]
+print("%99s" % "Числа в диапазоне:")
+for i in result_list:
+    print("%99s" % i)
+		</pre>												
+	</body>
+</html>
