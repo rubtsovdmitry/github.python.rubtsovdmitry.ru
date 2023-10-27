@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 41. Унарные и бинарные операторы. </title>		
+	</head>
+	<body>
+		<h1> 41. Унарные и бинарные операторы. <span class="a_marker"> (в коде есть строки из следующих тем: "функции"). </span> </h1>
+		<div> <a class="link_task" href="./1.5.41.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Математические операторы бывают унарными (unary) и бинарными (binary). 
+			Унарные операторы взаимодействуют с одним значением, тогда как бинарные – с двумя. Например, в выражении 2 * –3 оператор * является бинарным, поскольку взаимодействует с двумя числами: 2 и -3. 
+			При этом сам оператор – здесь унарный, ведь он применяется только к одному числу 3. Одного лишь символа оператора недостаточно, чтобы определить, является ли он унарным или бинарным. 
+			Например, хотя в предыдущем случае оператор – был унарным, в выражении 2 – 3 он приобретет роль бинарного. 
+			Подобная неоднозначность, также характерная для оператора сложения, должна быть устранена до применения других операций к элементам списка лексем математического выражения. <br>
+			Напишите программу для поиска унарных операторов + и – в списке лексем и их замены на сочетание символов u+ и u– соответственно. Программа должна составить список лексем, в котором унарные операторы заменены на u+ и u-.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_f2(result_list):
+    uno_list = []
+    znaki = ["*", "/", "^", "-", "+"]
+    znaki_2 = ["-", "+"]
+    temp = ""
+    for index, i in enumerate(result_list):
+        if index == 0 and i in znaki_2:
+            uno_list.append("u" + i)
+            temp = i
+        elif i not in znaki_2:
+            uno_list.append(i)
+            temp = i
+        elif i in znaki_2 and temp in znaki:
+            uno_list.append("u" + i)
+            temp = i
+        elif i in znaki_2 and temp not in znaki:
+            uno_list.append(i)
+            temp = i    
+    return uno_list  
+
+
+def my_f(digit):
+    result_list = []
+    znaki = ["*", "/", "^", "-", "+"]
+    temp = ""
+    for i in digit:
+        if i == " ":
+            pass
+        elif i in znaki:
+            result_list.append(temp)
+            result_list.append(i)
+            temp = ""
+        elif i not in znaki:
+            i = float(i)
+            i = str(i)
+            temp += i
+    if len(temp) > 0:
+        result_list.append(float(temp))
+    result_list = [i for i in result_list if i != ""]
+    return (my_f2(result_list))
+        
+
+# ввод данных
+while True:
+    digit = input("%100s" % "Введите математическое выражение: ")
+    try:
+        result_list = my_f(digit)         
+        break
+    except:
+        print("%99s" % "Вы ввели не цифры с операторами.")
+        print()
+
+print(result_list)
+		</pre>												
+	</body>
+</html>
