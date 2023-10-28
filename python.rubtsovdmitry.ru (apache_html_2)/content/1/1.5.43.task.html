@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 43. Решето Эратосфена. </title>		
+	</head>
+	<body>
+		<h1> 43. Решето Эратосфена. </h1>
+		<div> <a class="link_task" href="./1.5.43.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Решето Эратосфена – алгоритм, изобретенный более 2000 лет назад и служащий для нахождения всех простых чисел от 2 до некоторого целого числа n. <br>
+			Ценность данного алгоритма заключается в том, что на бумаге очень легко вычеркнуть все числа, кратные определенному числу. 
+			Сразу убираем 1 из списка простых чисел. Начинаем проверять числа на делимость с делителя 2, вычеркивая в списке все числа, которые кратные 2, кроме 2. 
+			Затем ищем следующее число после 2, которое не вычеркнуто и вычёркиваем все числа кратные ему, кроме его самого и т.д., пока не дойдём до конца списка. Цифры, которые в нём остались являются простыми.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+while True:
+    digit = input("%100s" % "Введите целое число, до которого будем искать все простые числа: ")
+    try:
+        digit = int(digit)
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+
+# составим список, в котором будем искать простые числа
+result_list = []
+for i in range(1, digit + 1):
+    result_list.append(i)
+result_list.remove(1)
+
+count = 0
+p = 2
+while True:
+    
+    for i in result_list:
+        if i != p and i % p == 0:
+            result_list.remove(i) 
+    while True:
+        p += 1
+        if p in result_list:
+            break        
+    if p == result_list[-1]:    
+        break
+   
+print(result_list)
+		</pre>												
+	</body>
+</html>
