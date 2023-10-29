@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 22. Пикник. </title>		
+	</head>
+	<body>
+		<h1> 22. Пикник. <span class="a_marker"> (в коде есть строки из следующих тем: "функции"). </span> </h1>
+		<div> <a class="link_task" href="./1.6.22.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Дан список гостей с предметами и их количеством, которые гости принесли на пикник: <br>
+			guests = { "Дмитрий": {"яблоки": 5, "конфеты": 12}, "Ольга": {"бутерброды": 3, "яблоки": 2}, "Мария": {"чашки": 4, "пироги": 1}, "Михаил": {"бананы": 4, "вода": 6} } <br>
+			Программа должна посчитать общее количество каждого предмета, который принесли все гости на пикник и вывести на экран. 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import pprint
+
+def my_f(guests):
+    done = {}
+    for a in guests.values():
+        for b, c in a.items():
+            if b not in done:
+                done[b] = c
+            else:
+                done[b] += c
+    return done
+
+
+# ввод данных
+guests = {
+    "Дмитрий": {"яблоки": 5, "конфеты": 12},
+    "Ольга": {"бутерброды": 3, "яблоки": 2},
+    "Мария": {"чашки": 4, "пироги": 1},
+    "Михаил": {"бананы": 4, "вода": 6}
+}
+
+result = my_f(guests)
+print()
+pprint.pprint(result)                           # красивый вывод словаря на печать
+print()
+		</pre>				
+	</body>
+</html>
