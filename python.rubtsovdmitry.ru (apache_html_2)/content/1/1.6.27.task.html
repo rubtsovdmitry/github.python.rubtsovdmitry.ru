@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 27. Две игральные кости. </title>		
+	</head>
+	<body>
+		<h1> 27. Две игральные кости. <span class="a_marker"> (в коде есть строки из следующих тем: "библиотеки"). </span> </h1>
+		<div> <a class="link_task" href="./1.6.27.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно симулировать 1000 выбрасываний двух костей. <br> 
+			На экран должны быть выведены сумма двух костей, количество выпаданий и процент выпаданий. <br>
+			Пример: <br>
+			<img src="../../pictures/bones.jpg" alt="">
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random
+
+# создадим словарь, где ключи - это сумма очков на костях. Наполним значениями ключи (кол-во раз выпадания такой суммы).
+result_dict = {}                                # конечный словарь
+count = 1000                                    # счетчик, который будем уменьшать
+while count > 0:                                
+    x = random.randint(1, 6)                    # первая кость
+    y = random.randint(1, 6)                    # вторая кость
+    amount = x + y                              
+    if amount not in result_dict:               # создать ключ с суммой
+        result_dict[amount] = 1
+    else:                                       # копить значения ключа
+        result_dict[amount] += 1
+    count -= 1
+
+# красивый вывод на печать
+print()
+print("%10s%15s%15s" % ("Сумма", "Выпадания", "Процент"))
+for a, b in result_dict.items():
+    c = round((b / sum(result_dict.values()) * 100), 2)
+    print("%10s%15s%15s" % (a, b, c))
+print()
+		</pre>				
+	</body>
+</html>
