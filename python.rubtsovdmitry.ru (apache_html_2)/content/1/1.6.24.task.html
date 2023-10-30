@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 24. Инвентарь приключенческой игры. </title>		
+	</head>
+	<body>
+		<h1> 24. Инвентарь приключенческой игры. </h1>
+		<div> <a class="link_task" href="./1.6.24.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Дан словарь: things_dict = { "верёвка": 1, "факел": 6, "золотая монета": 42, "кинжал": 1, "стрела": 12 }. <br>
+			Отобразить словарь в следующем виде: <br> 
+			_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br> 
+			Инвентарь: <br>
+			<br> 
+			           верёвка   -   1 <br>
+			             факел   -   6 <br>
+			    золотая монета   -   42 <br>
+			            кинжал   -   1 <br>
+			            стрела   -   12 <br>
+			<br> 
+			Всего элементов: 62 <br>
+			_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+things_dict = {
+    "верёвка": 1,
+    "факел": 6,
+    "золотая монета": 42,
+    "кинжал": 1,
+    "стрела": 12
+}
+
+# печать горизонтальной линии
+print()
+for i in range(0, 15):
+    print("_", end=" ")
+print("\n")
+
+print("Инвентарь:")
+print()
+
+# печать списка вещей
+for a, b, in things_dict.items():
+    print("   ", "%15s" % a, "  -  ", b)
+
+print()
+print("Всего элементов:", sum(things_dict.values()))
+
+# печать горизонтальной линии
+print()
+for i in range(0, 15):
+    print("_", end=" ")
+print("\n")
+		</pre>				
+	</body>
+</html>
