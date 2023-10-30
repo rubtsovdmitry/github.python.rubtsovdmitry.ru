@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 25. Инвентарь приключенческой игры (продолжение). </title>		
+	</head>
+	<body>
+		<h1> 25. Инвентарь приключенческой игры (продолжение). </h1>
+		<div> <a class="link_task" href="./1.6.25.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			В инвентаре у игрока были вещи (см. предыдущую задачу). После прохождение миссии с драконом игрок получил награду и его инвентарь обновился. В словарь добавились предметы по одному для каждого элемента из списка. <br> 
+			Список: dragon_craft = [ "золотая монета", "кинжал", "золотая монета", "золотая монета", "рубин"]. <br>
+			Отобразить обновлённый словарь как в предыдущей задаче.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+things_dict = {
+    "верёвка": 1,
+    "факел": 6,
+    "золотая монета": 42,
+    "кинжал": 1,
+    "стрела": 12
+}
+dragon_craft = [ "золотая монета", "кинжал", "золотая монета", "золотая монета", "рубин"]
+
+# обновим словарь новыми данными
+for i in dragon_craft:
+    if i not in things_dict:
+        things_dict[i] = 1
+    else:
+        things_dict[i] += 1
+
+# печать горизонтальной линии
+print()
+for i in range(0, 15):
+    print("_", end=" ")
+print("\n")
+
+print("Инвентарь:")
+print()
+
+# печать списка вещей
+for a, b, in things_dict.items():
+    print("   ", "%15s" % a, "  -  ", b)
+
+print()
+print("Всего элементов:", sum(things_dict.values()))
+
+# печать горизонтальной линии
+print()
+for i in range(0, 15):
+    print("_", end=" ")
+print("\n")
+		</pre>				
+	</body>
+</html>
