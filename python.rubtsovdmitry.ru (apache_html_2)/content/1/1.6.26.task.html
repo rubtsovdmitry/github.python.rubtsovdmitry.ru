@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 26. Поиск по значению. </title>		
+	</head>
+	<body>
+		<h1> 26. Поиск по значению. </h1>
+		<div> <a class="link_task" href="./1.6.26.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Дан словарь: my_dict = { "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 1, "g": 1} <br>
+			Нужно найти все ключи со значением 1.
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+my_dict = { "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 1, "g": 1}
+result = [i for i in my_dict if my_dict[i] == 1]
+print(result)
+		</pre>				
+	</body>
+</html>
