@@ -1,11 +1,12 @@
 * { margin:0px; }
-h1 { font-size: 18px; background-color: #fff977; }
+h1 { font-size: 22px; background-color: #fff977; }
 .list { border: 1px dotted gray; width: 24.5%; height: 2215px; margin-left: 0.5%; margin-top: 5px; float: left; background-color: #fff977; }
-a { color: black; font-size: 18px; }
-span { font-weight: bold; font-size: 18px; }
+a { color: black; font-size: 20px; }
+span { font-weight: bold; font-size: 20px; }
 .task { border: 1px dotted gray; width: 68%; height: 2215px; margin-left: 0.5%; margin-top: 5px; }
-.span_down { vertical-align: sub; font-size: 10px; }
-.span_up { vertical-align: super; font-size: 10px; }
+.span_down { vertical-align: sub; font-size: 12px; }
+.span_up { vertical-align: super; font-size: 12px; }
 .span_red { color: red; }
-.link_task { background-color: #ffd09b; font-size: 15px; }
+.link_task { background-color: #ffd09b; font-size: 16px; }
 .a_marker { color: red; }
+div { font-size: 20px; }
