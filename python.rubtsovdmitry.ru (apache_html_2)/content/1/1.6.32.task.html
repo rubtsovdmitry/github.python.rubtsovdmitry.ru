@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 32. Эрудит. </title>		
+	</head>
+	<body>
+		<h1> 32. Эрудит. </h1>
+		<div> <a class="link_task" href="./1.6.32.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			В известной игре Эрудит (Scrabble™) каждой букве соответствует определенное количество очков. Общая сумма очков, которую получает игрок, составивший это слово, складывается из очков за каждую букву, входящую в его состав. 
+			Чем более употребимой является буква в языке, тем меньше очков начисляется за ее использование. В словаре приведены все соответствия букв и очков из английской версии игры: <br>
+			score = { <br>
+			     1: "aeilnorstu", <br>
+			     2: "dg", <br>
+			     3: "bcmp", <br>
+			     4: "fhvwy", <br>
+			     5: "k", <br>
+			     8: "jx", <br>
+			     10: "qz" <br>
+			} <br>
+			Напишите программу, рассчитывающую и отображающую количество очков за собранное слово. Создайте словарь для хранения соответствий между буквами и очками и используйте его в своем решении. 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+score = {
+    1: "aeilnorstu",
+    2: "dg",
+    3: "bcmp",
+    4: "fhvwy",
+    5: "k",
+    8: "jx",
+    10: "qz"
+}
+text = input("%100s" % "Введите текст на английском языке: ")
+
+result = int()
+for i in text:
+    for a, b in score.items():
+        if i in b:
+            result += a
+
+print("%99s" % f"Количество очков: {result}.")        
+		</pre>				
+	</body>
+</html>
