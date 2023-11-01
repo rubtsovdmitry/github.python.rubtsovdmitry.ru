@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 44. Табличный вывод данных. </title>		
+	</head>
+	<body>
+		<h1> 44. Табличный вывод данных. </h1>
+		<div> <a class="link_task" href="./1.5.44.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			Имеется список: data = [["яблоки", "апельсины", "вишни", "бананы"], ["Алиса", "Боб", "Кэрол", "Дэвид"], ["собаки", "кошки", "лось", "гусь"]] <br>
+			Нужно вывести его на экране в след. виде:
+			<pre>
+__________________________________________________			 
+		яблоки      Алиса     собаки						
+             апельсины        Боб      кошки
+		 вишни      Кэрол       лось
+		бананы      Дэвид       гусь
+__________________________________________________
+			</pre>
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+# ввод данных
+data = [["яблоки", "апельсины", "вишни", "бананы"], ["Алиса", "Боб", "Кэрол", "Дэвид"], ["собаки", "кошки", "лось", "гусь"]]
+for i in range(50):
+    print("_", end="")
+print("\n")
+for a, b, c in zip(data[0], data[1], data[2]):
+    print(a.rjust(10), b.rjust(10), c.rjust(10))
+for i in range(50):
+    print("_", end="")
+print("\n")
+		</pre>												
+	</body>
+</html>
