@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 44. Сцепляем файлы. </title>		
+	</head>
+	<body>
+		<h1> 44. Сцепляем файлы. </h1>
+		<div> <a class="link_task" href="./1.7.44.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Необходимо написать программу, которая будет работать из консоли. При запуске программы, ей нужно передать параметр: <br> 
+			py 1.7.44.task.py 1.7.44_1.txt 1.7.44_2.txt 1.7.44_union.txt <br>
+			py - это питон в Linux <br>
+			1.7.44.task.py - это название нашей программы <br>
+			1.7.44_1.txt 1.7.44_2.txt 1.7.44_union.txt - это переданные в качестве аргументов файлы, которые находятся в том же каталоге, что и наш скрипт. <br>
+			Программа должна объединить два первых файла в один третий файл. <br>
+			Файлы 1.7.44_1.txt 1.7.44_2.txt, есть в репозитории (можно создать свои). <br>
+			1.7.44_union.txt - это файл - результат объединения.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv                            # импортируем argv из библиотеки sys (нужно для работы с командной строкой)
+
+try:
+    script, first, second, third = argv         # первый параметр - это название скрипта, "first" и "second" - это название файлов, который мы передаём скрипту и последний параметр "third" - в какой файл записываем
+    buf_1 = open(f"./{first}", "r")             # читаем данные из файла, путь к файлу состоит из: ./ - читать в тек. каталоге, first - переданное название файла
+    str_1 = buf_1.read()                        # превращаем содержимое файла в строку
+    buf_2 = open(f"./{second}", "r")
+    str_2 = buf_2.read()                        # превращаем содержимое файла в строку
+    str_1 += str_2
+    output_text = open(f"./{third}", "w")       
+    output_text.write(str_1)                    # записываем
+    output_text.close()
+except:
+    print("Вы сделали ошибку в вводе.")		
+		</pre>
+	</body>
+</html>
