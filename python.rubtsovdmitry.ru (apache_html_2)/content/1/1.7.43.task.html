@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 43. Отображаем конец файла. </title>		
+	</head>
+	<body>
+		<h1> 43. Отображаем конец файла. </h1>
+		<div> <a class="link_task" href="./1.7.43.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Тоже самое, что и в предыдущей задаче, только теперь нужно отобразить последние 4 строки.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv                            # импортируем argv из библиотеки sys (нужно для работы с командной строкой)
+
+try:
+    script, first = argv                        # первый параметр - это название скрипта, второй - это название файла, который мы передаём скрипту
+    buf = open(f"./{first}", "r")               # читаем данные из файла, путь к файлу состоит из: ./ - читать в тек. каталоге, first - переданное название файла
+    s = buf.readlines()                         # превращаем строки в список
+    for i in s[-4:]:             
+        print(i.strip())                        # в цикле печатаем элементы списка без значка переноса строки /n
+except:
+    print("Вы сделали ошибку в вводе.")		
+		</pre>
+	</body>
+</html>
