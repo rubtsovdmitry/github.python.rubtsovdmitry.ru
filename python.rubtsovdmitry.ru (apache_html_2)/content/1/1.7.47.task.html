@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 47. Частота букв в файле. </title>		
+	</head>
+	<body>
+		<h1> 47. Частота букв в файле. </h1>
+		<div> <a class="link_task" href="./1.7.47.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите программу, которая будет считать частоту появления разных букв в тексте. 
+			При этом пробелы, знаки препинания и цифры должны быть проигнорированы. 
+			Также не должен учитываться регистр, то есть символы a и A должны восприниматься как одна буква. <br> 
+			Имя файла для анализа пользователь должен передавать программе посредством аргумента командной строки. 
+			Если программе не удастся открыть файл для анализа или аргументов командной строки будет слишком много, на экране должно быть отображено соответствующее сообщение об ошибке. <br>
+			Можно взять файл для обработки по ссылке:
+			<a href="../../add/pushkin.txt" download="Acme Documentation (ver. 2.0.1).txt"> ⇒ А.С. Пушкин </a>				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv 
+import pprint                           
+
+try:
+    script, first = argv         
+    buf = open(f"./{first}", "r")       
+    text = buf.read()                                                   # прочитаем весь текст одним разом
+    text = text.replace("-","")
+    text = text.replace("\n","")
+    text = text.replace(",","")
+    text = text.replace(":","")
+    text = text.replace(".","")
+    text = text.replace(";","")
+    text = text.replace("!","")
+    text = text.replace("\"","")
+    text = text.replace("?","")
+    text = text.replace("—","")
+    text = text.replace("«","")
+    text = text.replace("»","")
+    text = text.replace(" ","")
+    text = text.replace(" ","")                                        # такой вот пробел был в тексте (пробела выше не хватило)
+    text = text.lower()
+    
+    digits = "0123456789"                   
+    for i in digits:                                                   # уберём все цифры из текста
+        text = text.replace(i, "")
+
+    result_dict = {}
+    for i in text:
+        if i not in result_dict:
+            result_dict[i] = 1
+        else:
+            result_dict[i] += 1
+
+    pprint.pprint(result_dict)
+except:
+    print("Имя файла не существует или слишком много аргументов.")		
+		</pre>
+	</body>
+</html>
