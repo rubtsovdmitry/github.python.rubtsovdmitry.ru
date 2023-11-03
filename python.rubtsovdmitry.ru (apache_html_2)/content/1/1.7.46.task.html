@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 46. Самое длинное слово в файле. </title>		
+	</head>
+	<body>
+		<h1> 46. Самое длинное слово в файле. </h1>
+		<div> <a class="link_task" href="./1.7.46.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			В данном упражнении вы должны написать программу, которая будет находить самое длинное слово в файле. 
+			В качестве результата программа должна выводить на экран все слова такой длины. 
+			Для простоты принимайте за значимые буквы любые непробельные символы, включая цифры и знаки препинания. <br>
+			Программа должна запускаться из консоли, а файл для обработки должен передоваться ей в качестве параметра.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv                            
+
+script, first = argv         
+buf = open(f"./{first}", "r")       
+text = buf.readlines()                                              # нужно разбить текст на список строк
+text = [i.rstrip() for i in text]                                   # уберём знаки переноса в конце строк
+
+result_list = []                                                    # в этот список накопим только каждое слово по отдельности
+for i in text:
+    temp = i.split(" ")
+    result_list.extend(temp)
+
+longest = len(max(result_list, key=len))                            # определим длину самого длинного слова
+result_list = [i for i in result_list if len(i) == longest]         # отберём все слова с самой большой длиной
+
+print()
+for i in result_list:
+    print(i)
+print()		
+		</pre>
+	</body>
+</html>
