@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 45. Нумеруем строки в файле. </title>		
+	</head>
+	<body>
+		<h1> 45. Нумеруем строки в файле. </h1>
+		<div> <a class="link_task" href="./1.7.45.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите программу, которая будет считывать содержимое файла, добавлять к считанным строкам порядковый номер и выводить их в таком виде на экран. <br> 
+			Каждая строка должна начинаться с ее номера, двоеточия и пробела, после чего должен идти текст строки из исходного файла. <br>
+			Программа должна запускаться из консоли, а файл для обработки должен передоваться ей в качестве параметра.				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv                            
+
+script, first = argv         
+buf = open(f"./{first}", "r")       
+text = buf.readline()                               # считываем данные из файла по-строчно
+count = 1
+result = ""
+while text != "":
+    new_str = str(count) + ": " + text
+    count += 1
+    result += new_str
+    text = buf.readline()                           # продолжаем считывать данные из файла по-строчно, пока строка не будет равна ""
+print(result)		
+		</pre>
+	</body>
+</html>
