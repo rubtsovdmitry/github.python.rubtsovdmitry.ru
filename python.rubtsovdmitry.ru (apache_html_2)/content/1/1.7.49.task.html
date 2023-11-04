@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 49. Удаляем комментарии. </title>		
+	</head>
+	<body>
+		<h1> 49. Удаляем комментарии. </h1>
+		<div> <a class="link_task" href="./1.7.49.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			В системах Linux конфигурационные файлы изобилуют строками-комментариями, которые начинаются со знака решётки #.
+			К примеру, возьмём конфигурационный файл популярного сервиса SSH - это sshd_config. 
+			Необходимо выбросить из него все строки начинающиеся на знак решётки # или со знака переноса строки \n. 
+			После обработки сохранить конфигурационный файл в тот же каталог, но только дате ему другое название, к примеру sshd_config_new. <br>
+			Программа должна запускаться из командной строки и получать файл sshd_config в качестве аргумента. <br>			
+			Можно взять файл для обработки по ссылке:
+			<a href="../../add/sshd_config" download="конфигурационный файл SSH"> ⇒ конфигурационный файл SSH </a>				
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+from sys import argv 
+
+try:
+    script, first = argv         
+    buf = open(f"./{first}", "r")       
+    text = buf.readlines()                                                    # прочитаем текст как список строк
+    result = []                                                               # сюда накопим новый список без ненужных строк
+    for i in text:
+        if i[0] != "#" and i[0] != "\n":                                      # выбросим строки, начинающиеся на # и на перенос строки "\n"
+            result.append(i)
+    buf_out = open(f"./{first}_new", "w")
+    temp = ""                                                                 # создадим конечную строку
+    for i in result:
+        temp += i
+    buf_out.write(temp)
+    buf_out.close()
+except:
+    print("Имя файла не существует или слишком много аргументов.")		
+		</pre>
+	</body>
+</html>
