@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 52. Повторяющиеся слова. </title>		
+	</head>
+	<body>
+		<h1> 52. Повторяющиеся слова. </h1>
+		<div> <a class="link_task" href="./1.7.52.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Проверка орфографии – лишь составная часть расширенного текстового анализа на предмет наличия ошибок. 
+			Одной из самых распространенных ошибок в текстах является повторение слов. Например, автор может по ошибке дважды подряд написать одно слово, как в следующем примере: <br>
+			>>>   At least one value must be <span class="span_red"> entered </span> <br> 
+			>>>   <span class="span_red"> entered </span> in order to compute the average. <br>
+			Некоторые текстовые процессоры умеют распознавать такой вид ошибок при выполнении текстового анализа. <br>
+			В данном упражнении вам предстоит написать программу для определения наличия дублей слов в тексте. 
+			При нахождении повтора на экран должен выводиться номер строки. Удостоверьтесь, что программа корректно обрабатывает случаи, когда повторяющиеся слова находятся на разных строках, как в предыдущем примере. <br>
+			Предлагаю воспользоваться готовым файлом с ошибками, который называется pushkin_mistakes.txt (это Сказка о мертвой царевне и о семи богатырях): <a href="../../add/pushkin_mistakes.txt" download="А.С. Пушкин"> ⇒ А.С. Пушкин </a>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+buff = open("./pushkin_mistakes.txt")
+
+text_before = []                                                                                    # будем сюда сохранять предыдущую строку
+count = 0                                                                                           # счётчик строк
+mistake = []                                                                                        # в этот список будем кидать номера строк с ошибками
+while True:
+    count += 1
+    text = buff.readline()
+    if text == "":                                                                                  # условие отмены цикла
+        break
+    text = text.lower()
+    text_mod = ""                                                                                   # создаём новую строку с нуля
+    for i in text:
+        if ("а" &lt;= i &lt;= "я") or (i == " ") or (i == "-"):
+            text_mod += i
+    text = text_mod.split(" ")                                                                      # разобьём новую строку на список из слов
+    text = [i for i in text if (i != "")]                                                           # уберём лишнее из списка
+    if len(text_before) > 0 and len(text) > 0:                                                      # ищем ошибки-повторы в разных строках
+        if text[0] == text_before[-1]:
+            mistake.append(count)        
+    temp = ""                                                                                       # ищем ошибки-повторы в одной строке
+    for i in text:
+        if i == temp:
+            mistake.append(count)
+        temp = i
+    print(count, text)                                                                              # напечатаем строки-списки и их номера, для проверки
+    text_before = text                                                                              # присвоем новое значение для предыдущей строки
+
+print()
+print("Ошибки в след. строках (если номера повторяются значит несколько ошибок):", mistake)
+print()		
+		</pre>
+	</body>
+</html>
