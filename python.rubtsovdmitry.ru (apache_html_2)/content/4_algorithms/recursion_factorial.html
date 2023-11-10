@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 1. Факториал. </title>		
+	</head>
+	<body>
+		<h1> 1. Факториал. </h1>
+		<div> <a class="link_task" href="./recursion_factorial.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Найти факториал числа используя рекурсию.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+#####################################################################################################
+"""В этом блоке применяется рекурсивный способ решения задачи """
+#####################################################################################################
+
+def factorial(digit):
+    if digit == 1:                                                      # базовый случай
+        result = 1
+    else:                                                               # рекурсия
+        result = digit * factorial(digit - 1)        
+    return result
+
+
+while True:
+    try:
+        digit = input("%100s" % "Введите целое число: ")
+        digit = int(digit)
+    except:
+        print("%99s" % "Вы ввели не число.")
+        print()
+    else:
+        break
+
+result = factorial(digit)
+print()
+print("%99s" % result)
+print("##########################################################################################################################")
+
+#####################################################################################################
+"""В этом блоке применяется не рекурсивный способ решения задачи """
+#####################################################################################################
+
+while True:
+    try:
+        digit = input("%100s" % "Введите целое число: ")
+        digit = int(digit)
+    except:
+        print("%99s" % "Вы ввели не число.")
+        print()
+    else:
+        break
+
+result = 1
+while True:
+    if digit == 1:
+        break
+    result *= digit
+    digit -= 1
+
+print()
+print("%99s" % result)			
+		</pre>
+	</body>
+</html>
