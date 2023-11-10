@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 4. Фибоначчи. </title>		
+	</head>
+	<body>
+		<h1> 4. Фибоначчи. </h1>
+		<div> <a class="link_task" href="./recursion_4_fibonacci.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна спросить сколько чисел Фибоначчи вывести на экран. Вывести список с числами Фибоначчи. <br>
+			Числа Фибоначчи должны быть найдены с помощью рекурсии.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def fibo(i):                                                        # функция вычисляет число Фибоначчи по порядковому номеру числа
+    if i == 1:                                                      # базовый случай
+        return 1
+    elif i == 2:                                                    # базовый случай
+        return 1
+    return fibo(i - 1) + fibo(i - 2)
+
+
+digit = int(input("Введите сколько цифр Фибоначчи вывести (целое число): "))
+
+diapazon = range(1, digit + 1)
+result = [fibo(i) for i in diapazon]
+
+print(result)			
+		</pre>
+	</body>
+</html>
