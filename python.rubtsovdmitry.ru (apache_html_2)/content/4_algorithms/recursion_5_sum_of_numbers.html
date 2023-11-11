@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Сумма чисел. </title>		
+	</head>
+	<body>
+		<h1> 5. Сумма чисел. </h1>
+		<div> <a class="link_task" href="./recursion_5_sum_of_numbers.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна рекурсивно вызывать функцию, которая будет спрашивать число у пользователя. 
+			Каждый раз функция просит ввод числа, для отмены нужно просто ввести -enter-. 
+			В итоге должна быть выведена сумма всех введённых чисел.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def():
+    digit = input("%100s" % "Введите число (просто -enter- для выхода): ")
+    if digit == "":
+        return 0
+    else:        
+        return (my_def() + float(digit))
+
+
+print("%99s" % f"Сумма всех введённых чисел равна: {my_def()}")			
+		</pre>
+	</body>
+</html>
