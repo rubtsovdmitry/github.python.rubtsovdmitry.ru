@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 7. Возведение числа в степень. </title>		
+	</head>
+	<body>
+		<h1> 7. Возведение числа в степень. </h1>
+		<div> <a class="link_task" href="./recursion_7_degree.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна запросить у пользователя число (n) и степень (x), в которую будем возводить это число. <br>
+			Программа должна вывести результаты возведения числа в степень от 0 до введённой степени пользователем (n ** 0, n ** 1, ... n ** x).			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(digit, degree):
+    if degree &lt; 0:
+        return None
+    my_def(digit, (degree - 1))
+    print()
+    print(f"Возведение числа {digit} в степень {degree} равно: {digit ** degree}")
+
+
+while True:
+    digit = input("%100s" % "Введите число, которое будем возводить в степень: ")
+    degree = input("%100s" % "Введите степень, в которую будем возводить число: ")
+    try:
+        digit = int(digit)
+        degree = int(degree)
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+
+my_def(digit, degree)			
+		</pre>
+	</body>
+</html>
