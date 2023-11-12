@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 10. Перевод числа из десятичной системы счисления в двоичную. </title>		
+	</head>
+	<body>
+		<h1> 10. Перевод числа из десятичной системы счисления в двоичную. </h1>
+		<div> <a class="link_task" href="./recursion_10_10_in_2.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна переводить десятичную систему счисления в двоичную с помощью рекурсии.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(digit):
+    if digit == 1:
+        return 1
+    result = str(my_def(digit // 2)) + str(digit % 2)                                       # первое слагаемое - это вернувшийся базовый случай, + с каждым шагом прибавляется остаток от деления на 2
+    return result
+
+
+while True:
+    digit = input("%100s" % "Введите число в десятичной системе счисления: ")
+    try:
+        digit = int(digit)
+        break
+    except:
+        print("%99s" % "Вы допустили ошибку в вводе.")
+
+print("%99s" % my_def(digit))			
+		</pre>
+	</body>
+</html>
