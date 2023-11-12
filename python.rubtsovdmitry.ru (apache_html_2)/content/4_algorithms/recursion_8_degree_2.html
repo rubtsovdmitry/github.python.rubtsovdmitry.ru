@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 8. Сумма степеней числа. </title>		
+	</head>
+	<body>
+		<h1> 8. Сумма степеней числа. </h1>
+		<div> <a class="link_task" href="./recursion_8_degree_2.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна запросить у пользователя число (n) и степень (x), до которой будем возводить это число. <br>
+			Нужно вывести сумму всех степеней числа от 0 до x.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(digit, degree):
+    if degree &lt; 0:
+        return 0
+    amount = (digit ** degree) + my_def(digit, (degree - 1))
+    return amount
+
+
+while True:
+    digit = input("%100s" % "Введите число, которое будем возводить в степень: ")
+    degree = input("%100s" % "Введите степень, до которой будем возводить число: ")
+    try:
+        digit = int(digit)
+        degree = int(degree)
+        break
+    except:
+        print("%99s" % "Вы ввели не число.")
+
+print("%99s" % f"Сумма всех степеней до {degree} числа {digit} равна {my_def(digit, degree)}.")			
+		</pre>
+	</body>
+</html>

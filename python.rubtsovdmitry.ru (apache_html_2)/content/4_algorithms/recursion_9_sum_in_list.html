@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 9. Сумма чисел в списке. </title>		
+	</head>
+	<body>
+		<h1> 9. Сумма чисел в списке. </h1>
+		<div> <a class="link_task" href="./recursion_9_sum_in_list.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Необходимо посчитать сумму всех чисел в списке. <br>
+			data = [0, 1, 2, 3, 2, 1, 0, 6]			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(data):
+    if len(data) == 0:
+        return 0
+    temp = data[1:]
+    amount = data[0] + my_def(temp)
+    return amount
+
+
+data = [0, 1, 2, 3, 2, 1, 0, 6]
+print(my_def(data))			
+		</pre>
+	</body>
+</html>
