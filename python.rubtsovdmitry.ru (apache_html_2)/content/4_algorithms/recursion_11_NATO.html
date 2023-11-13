@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 11. Фонетический алфавит НАТО. </title>		
+	</head>
+	<body>
+		<h1> 11. Фонетический алфавит НАТО. </h1>
+		<div> <a class="link_task" href="./recursion_11_NATO.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Фонетический алфавит представляет собой таблицу обозначений букв, каждой из которых соответствует то или иное слово. 
+			Широкое распространение такие алфавиты приобретают в условиях повышенной зашумленности каналов передачи информации, когда собеседник может просто не расслышать конкретную букву. 
+			В таких случаях вместо букв используются целые слова. Один из наиболее распространенных фонетических алфавитов был разработан в военном блоке НАТО. Соответствие букв и слов в нем приведено в словаре:
+			</div>
+			<pre>
+	      NATO = {
+         	"A": "Alpha",
+	         "B": "Bravo",
+	         "C": "Charlie",
+	         "D": "Delta",
+	         "E": "Echo",
+	         "F": "Foxtrot",
+	         "G": "Golf",
+	         "H": "Hotel",
+	         "I": "India",
+	         "J": "Juliet",
+	         "K": "Kilo",
+	         "L": "Lima",
+	         "M": "Mike",
+	         "N": "November",
+ 	         "O": "Oscar",
+	         "P": "Papa",
+	         "Q": "Quebec",
+	         "R": "Romeo",
+	         "S": "Sierra",
+	         "T": "Tango",
+	         "U": "Uniform",
+	         "V": "Victor",
+	         "W": "Whiskey",
+	         "X": "Xray",
+	         "Y": "Yankee",
+	         "Z": "Zulu"
+	      }
+			</pre>
+			<div>
+			Напишите программу, которая будет запрашивать слово у пользователя и отображать его на экране в виде шифра из соответствующих слов, обозначающих буквы исходного текста. 
+			Например, если пользователь введет слово Hello, на экране должна быть отображена следующая последовательность слов: Hotel Echo Lima Lima Oscar. 
+			Для решения этой задачи вам предстоит использовать рекурсивную функцию, а не циклы. При этом все небуквенные символы, введенные пользователем должны отображаться как есть.
+			</div>			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(word):
+    if len(word) == 0:
+        return ""
+    NATO = {
+        "A": "Alpha",
+        "B": "Bravo",
+        "C": "Charlie",
+        "D": "Delta",
+        "E": "Echo",
+        "F": "Foxtrot",
+        "G": "Golf",
+        "H": "Hotel",
+        "I": "India",
+        "J": "Juliet",
+        "K": "Kilo",
+        "L": "Lima",
+        "M": "Mike",
+        "N": "November",
+        "O": "Oscar",
+        "P": "Papa",
+        "Q": "Quebec",
+        "R": "Romeo",
+        "S": "Sierra",
+        "T": "Tango",
+        "U": "Uniform",
+        "V": "Victor",
+        "W": "Whiskey",
+        "X": "Xray",
+        "Y": "Yankee",
+        "Z": "Zulu"
+    }
+    if word[0] in NATO:                                                                         # рекурсивный случай, если в слове буква из алфавита НАТО
+        result = (my_def(word[1:]) + " " + NATO[word[0]])
+    else:                                                                                       # рекурсивный случай, если в слове символ не из алфавита НАТО
+        result = (my_def(word[1:]) + " " + word[0])
+    return result
+
+
+word = input("%100s" % "Введите слово на английском для преобразования: ")
+word = list(word[::-1].upper())
+
+print("%99s" % my_def(word).strip())			
+		</pre>
+	</body>
+</html>
