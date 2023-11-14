@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 13. Сумма нечётных чисел и вычитание чётных чисел. </title>		
+	</head>
+	<body>
+		<h1> 13. Сумма нечётных чисел и вычитание чётных чисел. </h1>
+		<div> <a class="link_task" href="./recursion_13_odd_minus_even.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Вывести на экран сумму всех нечётных чисел в списке минус сумму всех чётных. <br>
+			Список: data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(data):
+    if len(data) == 0:
+        return 0
+    temp = data[0] if data[0] % 2 != 0 else (data[0] * (-1))
+    amount = temp + my_def(data[1:])
+    return amount
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print("%99s" % f"Результат равен {my_def(data)}.")			
+		</pre>
+	</body>
+</html>
