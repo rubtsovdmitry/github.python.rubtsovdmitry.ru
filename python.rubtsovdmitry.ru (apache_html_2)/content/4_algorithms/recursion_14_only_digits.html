@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 14. Цифры в строке. </title>		
+	</head>
+	<body>
+		<h1> 14. Цифры в строке. </h1>
+		<div> <a class="link_task" href="./recursion_14_only_digits.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Пользователь вводит произвольный текст. Программа с помощью рекурсии должна вывести из введённой строки только цифры.
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(text):
+    if text == "":
+        return ""
+    else:
+        temp = text[0] if text[0].isdigit() else ""
+        result = temp + my_def(text[1:])
+    return result
+
+
+text = input("%100s" % "Введите строку: ")
+print("%99s" % f"Цифры в строке: {my_def(text)}.")			
+		</pre>
+	</body>
+</html>
