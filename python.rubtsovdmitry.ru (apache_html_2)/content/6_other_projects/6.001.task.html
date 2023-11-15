@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 1. Примеры по математике для 2-го класса. </title>		
+	</head>
+	<body>
+		<h1> 1. Примеры по математике для 2-го класса. </h1>
+		<div> <a class="link_task" href="./6.001.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна запросить порядок цифр (2 или 3 цифры) для генерации листа примеров по математике для второго класса и вывести результат в текстовый файл, который уже будет готов для печати. <br>
+			Пример для 2 цифр:
+			<pre>
+			24 + 69 =      47 + 46 =       41 - 9 =      69 - 39 =      89 - 76 =      68 - 10 =  
+			88 - 85 =       87 - 9 =       58 - 2 =      71 + 29 =      18 + 29 =      52 + 92 =  
+			... 
+			... 
+			</pre>
+			Пример для 3 цифр:
+			<pre>
+			859 - 531 =    595 + 767 =      827 + 7 =    394 + 255 =    761 - 231 =     55 + 270 = 
+			770 - 705 =    933 - 634 =    842 - 827 =    812 - 203 =     996 - 45 =     621 - 84 =
+			...
+			...
+			</pre>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random
+
+def my_def(digit):
+    if digit == 2:
+        sign = random.randint(1, 2)                                                     # генерация знака
+        sign = "+" if sign == 1 else "-"
+        a = random.randint(1, 99)                                                       # генерация числа
+        b = random.randint(1, 99)
+        if sign == "-":
+            result = f"{max(a, b)} {sign} {min(a, b)} = "
+        else:
+            result = f"{a} {sign} {b} = "
+    elif digit == 3:
+        sign = random.randint(1, 2)                                                     # генерация знака
+        sign = "+" if sign == 1 else "-"
+        a = random.randint(1, 999)                                                      # генерация числа
+        b = random.randint(1, 999)
+        if sign == "-":
+            result = f"{max(a, b)} {sign} {min(a, b)} = "
+        else:
+            result = f"{a} {sign} {b} = "
+    return result
+
+
+# ввод данных
+while True:
+    try:
+        digit = input("%100s" % "Введите порядок числа (2 или 3): ")
+        print()
+        digit = int(digit)
+    except:
+        print("%99s" % "Вы ввели не цифры.")
+        print()
+    else:
+        if 2 &lt;= digit &lt;= 3:
+            break
+        else:
+            print("%99s" % "Вы ввели не тот порядок.")
+            print()
+            continue
+
+buf = open("./6.001.task.txt", "w")
+for a in range(55):                                                                     # количество строк на листе
+    for b in range(6):                                                                  # количество столбцов
+        s = "%15s" % my_def(digit)
+        buf.write(s)                                                                    # дописываем строку с каждой новой итерацией в цикле
+    s = "\n"                                                                            # с окончанием вложенного цикла, заканчивается и строка примеров, переходим на новую строку
+    buf.write(s)                                                                        # здесь происходит запись по-строчно
+buf.close()		
+		</pre>
+	</body>
+</html>
