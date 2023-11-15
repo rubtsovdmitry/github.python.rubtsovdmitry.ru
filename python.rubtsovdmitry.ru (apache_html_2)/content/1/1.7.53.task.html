@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 53. Поиск номеров телефонов. </title>		
+	</head>
+	<body>
+		<h1> 53. Поиск номеров телефонов. </h1>
+		<div> <a class="link_task" href="./1.7.53.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Есть текст: "Позвони мне завтра по номеру 415-555-1011. 415-555-9999 - это номер телефона моего офиса." <br>
+			Программа должна найти в нём номера телефонов и показать на экране.						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def my_def(number):
+    if number[0:3].isdigit() and number[4:7].isdigit() and number[8:12].isdigit() and number[3] == "-" and number[7] == "-": 
+        return True    
+    else:
+        return False
+    
+
+text = "Позвони мне завтра по номеру 415-555-1011. 415-555-9999 - это номер телефона моего офиса."
+
+for i in range(len(text) - 12):
+    number = text[i:(i + 12)]
+    if my_def(number):
+        print("%99s" % number)		
+		</pre>
+	</body>
+</html>
