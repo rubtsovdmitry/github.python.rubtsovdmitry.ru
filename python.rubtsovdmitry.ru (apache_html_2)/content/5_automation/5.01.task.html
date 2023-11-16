@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 1. Коды телефонов. </title>		
+	</head>
+	<body>
+		<h1> 1. Коды телефонов. </h1>
+		<div> <a class="link_task" href="./5.01.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна открыть файл "Список_телефонов.txt", найти в нём коды телефонов и вывести их на экран без повторов. <br>
+			<a href="../../add/Список_телефонов.txt" download="Список телефонов"> ⇒ Список телефонов </a>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import re
+
+buf = open("./Список_телефонов.txt", "r")
+s = buf.read()
+
+regex_obj = re.compile(r"\(([\d]{3})\)")                  # составим регулярное выражение для поиска кодов городов вместе со скобками, но скобки не будем передавать в переменную
+x = regex_obj.findall(s)                                  # список кодов городов всех телефонов
+x = set(x)                                                # уберём повторы телефонов
+print()
+print(f"Коды телефонов: {x}.")
+print()		
+		</pre>
+	</body>
+</html>

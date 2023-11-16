@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 4. Аякc-Софокл. </title>		
+	</head>
+	<body>
+		<h1> 4. Аякc-Софокл. </h1>
+		<div> <a class="link_task" href="./5.04.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна открыть файл "Аякc-Софокл.txt", найти в нём все вхождения имени Аякс и заменить на Иван. <br>
+			Результат преобразования записать в новый файл, к примеру: "Аякc-Софокл_mod.txt" <br>
+			<a href="../../add/Аякc-Софокл.txt" download="Аякc-Софокл"> ⇒ Аякc-Софокл </a>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import re
+   
+buf = open("./Аякc-Софокл.txt", "r")
+s = buf.read()
+
+regex_obj = re.compile(r"\sАякс")                   # составим регулярное выражение для поиска имени Аяск
+s = regex_obj.sub(" Иван", s) 
+regex_obj = re.compile(r"«Аякс")                    # составим регулярное выражение для поиска имени Аяск
+s = regex_obj.sub(" «Иван", s)
+regex_obj = re.compile(r"\(Аякс")                   # составим регулярное выражение для поиска имени Аяск
+s = regex_obj.sub(" (Иван", s) 
+
+buf_2 = open("./Аякc-Софокл_mod.txt", "w")
+buf_2.write(s)
+buf_2.close()		
+		</pre>
+	</body>
+</html>
