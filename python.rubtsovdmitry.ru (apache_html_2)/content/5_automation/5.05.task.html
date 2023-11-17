@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Домены. </title>		
+	</head>
+	<body>
+		<h1> 5. Домены. </h1>
+		<div> <a class="link_task" href="./5.05.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна открыть файл "osnovy_informatiki.txt", найти в нём все ссылки URI. И извлечь из них записи доменов вместе с доменом верхнего уровня. <br> 
+			Пример: gosuslugi.ru, online.sberbank.ru, regex101.com <br>
+			Результат должен быть выведен на экран. <br>
+			<a href="../../add/osnovy_informatiki.txt" download="Основы информатики"> ⇒ Основы информатики </a>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import re
+
+def my_def(i):
+    return [x for x in i if x != ""][0]
+
+
+buf = open("./osnovy_informatiki.txt", "r")
+s = buf.read()
+
+regex_obj = re.compile(r"""https://w?w?w?\.?(\S*\.\S{2,3})/ 
+                       | http://w?w?w?\.?(\S*\.\S{2,3})/""", re.VERBOSE)
+x =regex_obj.findall(s)
+x = [my_def(i) for i in x]
+
+print()
+for i in x:
+    print("%33s" % i)
+print()		
+		</pre>
+	</body>
+</html>
