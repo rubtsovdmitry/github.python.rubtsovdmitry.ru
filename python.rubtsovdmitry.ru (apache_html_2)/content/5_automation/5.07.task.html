@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 7. Кредитные карты. </title>		
+	</head>
+	<body>
+		<h1> 7. Кредитные карты. </h1>
+		<div> <a class="link_task" href="./5.07.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа должна открыть файл "Список кредитных карт.txt". Нужно вывести информация по людям на экран, на котором номера карт будут отображены в виде "****************". <br>
+			<a href="../../add/Список_кредитных_карт.txt" download="Список кредитных карт"> ⇒ Список кредитных карт </a>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import re
+
+buf = open("./Список кредитных карт.txt", "r")
+s = buf.read()
+
+regex_obj = re.compile(r"\d{4} \d{4} \d{4} \d{4} ?\d?")                   
+s = regex_obj.sub("&lt;credit card> **************", s)
+regex_obj = re.compile(r"\d{16}(\d{3})?")                   
+s = regex_obj.sub("&lt;credit card> **************", s)
+
+print(s)		
+		</pre>
+	</body>
+</html>
