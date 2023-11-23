@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 2. Бутерброды (модуль pyinputplus). </title>		
+	</head>
+	<body>
+		<h1> 2. Бутерброды (модуль pyinputplus). </h1>
+		<div> <a class="link_task" href="./6.002.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			С помощью модуля pyinputplus написать программу про бутерброды. <br>
+			Программа должна спрашивать у пользователя тип хлеба, наполнитель, сыр, дополнительные ингредиенты и количество бутербродов. После опроса вывести на экран итог заказа.						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import pyinputplus
+
+print()
+print("Изготовитель бутербродов.")
+
+print()
+print("Выберите хлеб. ", end="")
+bread = pyinputplus.inputMenu(["Цельнозерновой", "Белый", "Ржаной"], numbered=True)
+print()
+print("Выберите наполнитель. ", end="")
+filler = pyinputplus.inputMenu(["Курица", "Индейка", "Ветчина", "Тофу"], numbered=True)
+print()
+print("Добавить сыр? (yes/no) ", end="")
+cheese = pyinputplus.inputYesNo()
+cheese = "С сыром" if cheese == "yes" else "Без сыра"
+if cheese == "С сыром":
+    print()
+    print("Выберите тип сыра. ", end="")
+    type_of_cheese = pyinputplus.inputMenu(["Чеддер", "Швейцарский", "Моцарелла"], numbered=True)
+print()
+print("Добавить майонез, горчицу, салат или помидор? (yes/no) ", end="")
+add = pyinputplus.inputYesNo()
+add = "добавить" if add == "yes" else "не добавлять"
+if add == "добавить":
+    print()
+    print("Выберите что добавить? ", end="")
+    what_add = pyinputplus.inputMenu(["Майонез", "Горчица", "Салат", "Помидор"], numbered=True)
+print()
+answer = "Количество бутербродов: "
+quantity = pyinputplus.inputInt(prompt=answer, greaterThan=0)
+print()
+print(bread)
+print(filler)
+if cheese == "С сыром":
+    print(f"С сыром {type_of_cheese}.")
+if add == "добавить":
+    print(f"Добавить {what_add}.")
+print(f"Количество: {quantity}.")		
+		</pre>
+	</body>
+</html>
