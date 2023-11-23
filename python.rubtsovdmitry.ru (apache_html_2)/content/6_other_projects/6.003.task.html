@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 3. Примеры по математике для 2-го класса (сложение и вычитание до 100) (интерактивно). </title>		
+	</head>
+	<body>
+		<h1> 3. Примеры по математике для 2-го класса (сложение и вычитание до 100) (интерактивно). </h1>
+		<div> <a class="link_task" href="./6.003.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Использовать модуль pyinputplus. <br>
+			Программа должна генерировать примеры и запрашивать результат. На решение каждого примера будет даваться 30 секунд. Количество примеров 20. <br>
+			По завершению программы должно быть выведено количество ошибок.						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import pyinputplus, random
+
+def my_def():    
+    sign = random.randint(1, 2)                                                     # генерация знака
+    sign = "+" if sign == 1 else "-"
+    a = random.randint(1, 99)                                                       # генерация числа
+    b = random.randint(1, 99)
+    if sign == "-":
+        result = (f"{max(a, b)} {sign} {min(a, b)} = ", (max(a, b) - min(a, b)))
+    else:
+        result = (f"{a} {sign} {b} = ", (a + b))
+    return result                                                                   # вернёт кортеж из задания и его решения ('77 - 38 = ', 39)
+
+print() 
+diapazon = range(20)                                                                # количество вопросов
+mistakes = 0                                                                        # сюда копим ошибки
+for i in diapazon:
+    temp = my_def()
+    try:
+        result = pyinputplus.inputInt(prompt=temp[0], timeout=30)                   # 30 секунд на ответ, ответ не цифра не является ошибкой
+        if result != temp[-1]:                                                      # ответ не верен - ошибка
+            print("Ошибка.")    
+            mistakes += 1
+    except:
+        print("Время вышло.")                                                       # ответ не верен - ошибка
+        mistakes += 1
+
+print()
+print(f"Количество ошибок: {mistakes}")
+print()		
+		</pre>
+	</body>
+</html>
