@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 1. Создание класса. </title>		
+	</head>
+	<body>
+		<h1> 1. Создание класса. </h1>
+		<div> <a class="link_task" href="./2.1.01.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно создать класс "Человек" с 2 методами: "отдыхает" и "работает".			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+class Human:
+    def __init__(self):                         # гарантировано создадим атрибут state для объекта
+        self.state = "отдыхает"                 # состояние по-умолчанию для всех объектов класса "Человек" - это отдых
+
+    def __repr__(self):                         # функционал печати
+        if self.state == "отдыхает":
+            return f"Человек отдыхает"                   
+        else:
+            return f"Человек работает"
+                
+    def work(self):
+        if self.state == "отдыхает":            # если self.state = отдыхает, то запустится 
+            self.state = "работает"
+            print("начал работу")
+        
+    def rest(self):
+        if self.state == "работает":            # если self.state = работает, то запустится 
+            self.state = "отдыхает"
+            print("решил отдохнуть")
+
+ivan = Human()                                  # создание объекта класса "Человек"
+print(ivan)                                     # вывод: Человек отдыхает. Это состояние по-умолчанию.
+ivan.work()                                     # меняем состояние объекта
+print(ivan)                                     # вывод состояния объекта
+ivan.rest()                                     # снова меняем состояние объекта  
+print(ivan)                                     # вывод состояния объекта			
+		</pre>
+	</body>
+</html>
