@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 5. Модернизация программы №3 путём наследования класса. </title>		
+	</head>
+	<body>
+		<h1> 5. Модернизация программы №3 путём наследования класса. </h1>
+		<div> <a class="link_task" href="./2.1.05.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно создать класс на основе текущего из программы №3. В классе необходимо добавить функционал для новой точки z. Получатся уже координаты точки не 2d, а 3d.			 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+############ создание супер-класса ##############################################################################################################################
+class Point:    
+    def __init__(self, x=0, y=0):                                                   # гарантировано создадим атрибуты __x и __y для объекта         
+        self.__x = x                                                                # состояние по-умолчанию для атрибута __x, если не указан другой - это 0
+        self.__y = y                                                                # состояние по-умолчанию для атрибута __y, если не указан другой - это 0      
+    def __repr__(self):                                                             # создаёт печатную форму для объекта
+        return f"Координаты x: {self.__x}, координаты y: {self.__y}"
+
+    def get_x(self):                                                                # создаём geter и seter для x
+        return self.__x
+    def set_x(self, value):
+        self.__x = value
+    def move_x(self, value):
+        self.__x += value
+    x = property(get_x, set_x)
+    x_move = property(get_x, move_x)
+
+    def get_y(self):                                                                # создаём geter и seter для y
+        return self.__y
+    def set_y(self, value):
+        self.__y = value
+    def move_y(self, value):
+        self.__y += value
+    y = property(get_y, set_y)
+    y_move = property(get_y, move_y)
+
+############### создание подкласса, наследование #################################################################################################################
+
+class Third_point(Point):                                                           # создаём подкласс
+    def __init__(self, x=0, y=0, z=0):                                                            
+        self.__z = z                                                                # состояние по-умолчанию для атрибута __z
+        Point.__init__(self, x, y)                                                  # состояние по-умолчанию для атрибута __x и атрибута __y. Обращается в суперкласс.
+    def __repr__(self):                                                             # создаёт печатную форму для объекта
+        s = Point.__repr__(self)                                                    # берём печатную форму из основного класса, она будет частью новой печати (стр.ниже)
+        return f"{s}, координаты z: {self.__z}"
+
+    def get_z(self):                                                                # создаём geter и seter для z (аналогично x и y)
+        return self.__z
+    def set_z(self, value):
+        self.__z = value
+    def move_z(self, value):
+        self.__z += value
+    z = property(get_z, set_z)
+    z_move = property(get_z, move_z)
+
+################ тестирование нового объекта #####################################################################################################################
+
+two = Third_point()                                                                 # создадим объект нового класса Third_point
+
+print()
+print(two)                                                                          # выведем состояние объекта с координатами по-умолчанию: "Координаты x: 0, координаты y: 0, координаты z: 0"
+
+two.x = 1                                                                           # меняем координаты x (обращается к свойству основного класса минуя Third_point)
+two.y = 2                                                                           # меняем координаты y (обращается к свойству основного класса минуя Third_point)
+two.z = 3                                                                           # меняем координаты z 
+print(two)                                                                          # выведем состояние объекта с координатами
+
+two.x_move = -1                                                                     # изменяем координаты x на дельту (обращается к свойству основного класса минуя Third_point)
+two.y_move = -2                                                                     # изменяем координаты y на дельту (обращается к свойству основного класса минуя Third_point)
+two.z_move = -3                                                                     # изменяем координаты z на дельту
+print(two)			
+		</pre>
+	</body>
+</html>
