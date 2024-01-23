@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 16. Матрица. </title>		
+	</head>
+	<body>
+		<h1> 16. Матрица. </h1>
+		<div> <a class="link_task" href="./6.016.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Создать окно из бегущих нулей и единиц, как в матрице. <br>
+			<br>
+			Пример программы: <br>
+			<img src="../../pictures/matrix.gif" alt=""> <br>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random, shutil, sys, time, bext
+
+"""КОНСТАНТЫ"""
+MIN_STREAM_LENGTH = 7
+MAX_STREAM_LENGTH = 14
+PAUSE = 0.1
+STREAM_CHARS = ['0', '1']
+
+DENSITY = 0.02                                                                                       # плотность
+
+WIDTH = shutil.get_terminal_size()[0]                                                                # размер окна терминала
+
+bext.clear()
+bext.fg("green")
+print('Нажмите &lt;Ctrl-C> для выхода.')
+time.sleep(2)
+
+try:
+    columns = [0] * WIDTH
+    while True:
+        for i in range(WIDTH):
+            if columns[i] == 0:
+                if random.random() &lt;= DENSITY:                                                      
+                    columns[i] = random.randint(MIN_STREAM_LENGTH, MAX_STREAM_LENGTH)
+            if columns[i] > 0:
+                print(random.choice(STREAM_CHARS), end='')
+                columns[i] -= 1
+            else:
+                print(' ', end='')
+        print()
+        time.sleep(0.1)
+except KeyboardInterrupt:
+    sys.exit()    		
+		</pre>
+	</body>
+</html>
