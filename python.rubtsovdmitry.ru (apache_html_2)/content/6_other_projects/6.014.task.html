@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 14. Глубокая пещера. </title>		
+	</head>
+	<body>
+		<h1> 14. Глубокая пещера. </h1>
+		<div> <a class="link_task" href="./6.014.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Программа представляет собой динамическое изображение глубокой пещеры, ведущей до самого центра Земли. <br>
+			Программа активно использует тот факт, что при выводе на экран новых строк старые передвигаются вверх. 
+			Благодаря этому у зрителя создается впечатление, что изображение на экране движется вниз. <br>
+			<br>
+			Пример программы: <br>
+			<img src="../../pictures/deep.gif" alt=""> <br>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random, sys, time, bext
+
+
+WIDTH = 70
+PAUSE_AMOUNT = 0.05
+
+bext.clear()
+print('Нажмите Ctrl-C для остановки.')
+time.sleep(2)
+
+leftWidth = 20
+gapWidth = 10
+
+while True:
+    rightWidth = WIDTH - gapWidth - leftWidth
+    print(('⬜' * leftWidth) + (' ' * gapWidth) + ('⬜' * rightWidth))
+
+    try:
+        time.sleep(PAUSE_AMOUNT)
+    except KeyboardInterrupt:
+        sys.exit()  
+
+    diceRoll = random.randint(1, 6)
+    if diceRoll == 1 and leftWidth > 2:
+        leftWidth = leftWidth - 1  
+    elif diceRoll == 2 and leftWidth + gapWidth &lt; WIDTH - 2:
+        leftWidth = leftWidth + 1  		
+		</pre>
+	</body>
+</html>
