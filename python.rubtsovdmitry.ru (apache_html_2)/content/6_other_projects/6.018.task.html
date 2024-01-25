@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 18. Быстрый стрелок. </title>		
+	</head>
+	<body>
+		<h1> 18. Быстрый стрелок. </h1>
+		<div> <a class="link_task" href="./6.018.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Напишите программу, которая будет проверять скорость вашей реакции. <br>
+			Вы должны нажать Enter, как только увидите сообщение об этом. А затем ещё раз нажать Enter, после сообщения "Выстрел!!!". 
+			Если нажмёте раньше или очень долго не будете нажимать, то проиграете.						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random, sys, time, bext
+
+
+bext.clear()
+print()
+input('Нажмите Enter, чтобы начать...')
+
+while True:
+    print()
+    time.sleep(random.randint(20, 50) / 10.0)                                       # рандомная задержка перед выстрелом
+    print('Выстрел!!!')
+    drawTime = time.time()                                                          # фиксация времени (старт)
+    input()  
+    timeElapsed = time.time() - drawTime                                            # как только будет выполнен предыдущий input, станет зафиксировано время реакции в переменной
+
+    if timeElapsed &lt; 0.01:                                                          # фальтстарт
+        print('Вы нажали enter раньше времени.')
+    elif timeElapsed > 0.33:
+        timeElapsed = round(timeElapsed, 4)
+        print('Вы нажали enter очень поздно!!!', timeElapsed, 'секунд.')
+    else:
+        timeElapsed = round(timeElapsed, 4)
+        print('Ваша реакция', timeElapsed, 'секунд.')
+        print('Вы выиграли!')
+
+    print('Нажмите QUIT для выхода, или Enter для продолжение.')
+    response = input('> ').upper()
+    if response == 'QUIT':
+        print('Игра окончена!')
+        sys.exit()     		
+		</pre>
+	</body>
+</html>
