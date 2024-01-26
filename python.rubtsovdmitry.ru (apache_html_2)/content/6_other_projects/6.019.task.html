@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 19. Индикатор хода выполнения. </title>		
+	</head>
+	<body>
+		<h1> 19. Индикатор хода выполнения. </h1>
+		<div> <a class="link_task" href="./6.019.task.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>			
+			Нужно написать код, который реализует индикатор хода выполнения, какого-то процесса. Это визуальный элемент, показывающий, какая доля задачи была выполнена. <br>
+			<br>
+			Пример программы: <br>
+			<img src="../../pictures/progressbar.gif" alt=""> <br>						
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+import random, time
+
+
+def getProgressBar(progress, total, barWidth=60):                               # в функции значение barWidth=60 задаётся по-умолчанию и означает количество баров
+    progressBar = ''  
+    progressBar += '['                                                          # значок начала полосы прогресса
+    
+    if progress > total:
+        progress = total
+    
+    numberOfBars = int((progress / total) * barWidth)                           # определим количество баров
+
+    progressBar += BAR * numberOfBars                                           # полоса из баров
+    progressBar += ' ' * (barWidth - numberOfBars)                              # пустое место в полосе прогресса
+    progressBar += ']'                                                          # закрытие полосы прогресса
+
+    percentComplete = round(progress / total * 100, 1)                          # вычислим процент выполнения
+    progressBar += ' ' + str(percentComplete) + '%'                             # добавим процент выполнения
+
+    progressBar += ' ' + str(progress) + '/' + str(total)                       # соберём строку для вывода
+
+    return progressBar  
+
+def main():
+    bytesDownloaded = 0
+    downloadSize = 4096
+    while bytesDownloaded &lt; downloadSize:
+        bytesDownloaded += random.randint(0, 100)                               # рандомное количество байт
+        barStr = getProgressBar(bytesDownloaded, downloadSize)
+        print(barStr, end='')
+        time.sleep(0.2)  
+        print('\r', end='')                                                     # после каждого вывода прогресса на печать происходит возврат каретки в начало строки
+    print()
+
+
+BAR = "❱"
+
+if __name__ == '__main__':
+    print()
+    main()     		
+		</pre>
+	</body>
+</html>
