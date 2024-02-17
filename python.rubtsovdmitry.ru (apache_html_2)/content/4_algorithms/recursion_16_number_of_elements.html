@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 16. Количество элементов в списке. </title>		
+	</head>
+	<body>
+		<h1> 16. Количество элементов в списке. </h1>
+		<div> <a class="link_task" href="./recursion_16_number_of_elements.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Нужно реализовать рекурсивный алгоритм для подсчёта количества элементов в списке.
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def count_function(a):
+    if len(a) == 0:
+        return 0
+    else:
+        a.pop()
+        count = 1 + count_function(a)
+        return count
+    
+
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+count_digits = count_function(a)
+
+print(f"Количество элементов списка: {count_digits}.")			
+		</pre>
+	</body>
+</html>
