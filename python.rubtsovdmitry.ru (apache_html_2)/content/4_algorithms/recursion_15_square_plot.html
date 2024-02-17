@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 15. Стратегия "разделяй и властвуй". Квадратные участки земли. </title>		
+	</head>
+	<body>
+		<h1> 15. <span class="span_blue_for_h">  Стратегия "разделяй и властвуй". </span> Квадратные участки земли. </h1>
+		<div> <a class="link_task" href="./recursion_15_square_plot.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			НУЖНО РАВНОМЕРНО РАЗДЕЛИТЬ УЧАСТОК ЗЕМЛИ НА ОДИНАКОВЫЕ КВАДРАТНЫЕ УЧАСТКИ. УЧАСТКИ ДОЛЖНЫ БЫТЬ НАСТОЛЬКО БОЛЬШИМИ, НАСКОЛЬКО ЭТО ВОЗМОЖНО. НЕ ДОЛЖНО ОСТАТЬСЯ НЕИСПОЛЬЗОВАННОГО МЕСТА НА УЧАСТКЕ.
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+"""РАЗДЕЛЯЙ И ВЛАВСТВУЙ.
+НУЖНО РАВНОМЕРНО РАЗДЕЛИТЬ УЧАСТОК ЗЕМЛИ НА ОДИНАКОВЫЕ КВАДРАТНЫЕ УЧАСТКИ.
+УЧАСТКИ ДОЛЖНЫ БЫТЬ НАСТОЛЬКО БОЛЬШИМИ, НАСКОЛЬКО ЭТО ВОЗМОЖНО.
+НЕ ДОЛЖНО ОСТАТЬСЯ НЕИСПОЛЬЗОВАННОГО МЕСТА НА УЧАСТКЕ."""
+
+# основная функция
+def square_field_function(length, width):
+    if length % width * (length // width) == 0:
+        return (width, width)                                                                                    # базовый случай возвращает кортеж с размерами участка
+    else:
+        side_1 = length - width * (length // width)
+        side_2 = width
+        length = max(side_1, side_2)
+        width = min(side_1, side_2)
+        return square_field_function(length, width)
+
+
+# ввод переменных
+length = 1680
+width = 640
+
+# функция, которая будет вызываться рекурсивно, пока не наёдем подходящий размер квадратного участка
+square_field = square_field_function(length, width)
+
+print(f"Размер участка {square_field[0]} x {square_field[-1]}")			
+		</pre>
+	</body>
+</html>

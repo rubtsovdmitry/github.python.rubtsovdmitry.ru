@@ -7,6 +7,8 @@ span { font-weight: bold; font-size: 19px; }
 .span_down { vertical-align: sub; font-size: 11px; }
 .span_up { vertical-align: super; font-size: 11px; }
 .span_red { color: red; }
+.span_blue { color: blue; }
+.span_blue_for_h { font-size: 21px; color: blue; }
 .link_task { background-color: #ffd09b; font-size: 15px; }
 .a_marker { color: red; }
 div { font-size: 19px; }
