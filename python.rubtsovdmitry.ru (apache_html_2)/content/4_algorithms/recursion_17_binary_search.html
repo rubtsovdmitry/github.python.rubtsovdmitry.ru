@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 17. Стратегия "разделяй и властвуй". Бинарный поиск. </title>		
+	</head>
+	<body>
+		<h1> 17. <span class="span_blue_for_h">  Стратегия "разделяй и властвуй". </span> Бинарный поиск. </h1>
+		<div> <a class="link_task" href="./recursion_17_binary_search.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Нужно реализовать рекурсивный алгоритм для реализации бинарного поиска.
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+"""Реализация бинарного поиска с помощью рекурсии."""
+
+def bin_seek(digit_for_seek, diapazon):
+    if int((min(diapazon) + max(diapazon) - 1) / 2 + 0.5) == digit_for_seek:
+        return [digit_for_seek, 1]
+    else:       
+        if (int((min(diapazon) + max(diapazon) - 1) / 2) + 0.5) > digit_for_seek:
+            diapazon = range(min(diapazon), int((min(diapazon) + max(diapazon) - 1) / 2 + 0.5))
+        else:
+            diapazon = range((int((min(diapazon) + max(diapazon) - 1) / 2 + 0.5) + 1), max(diapazon) + 1)
+        temp = bin_seek(digit_for_seek, diapazon)                                                               # спиоск [10, 1], где первый элемент - искомая цифра, а второй - это счётчик попыток
+        return [temp[0], (temp[1] + 1)]
+
+
+# входящие данные
+diapazon = range(1, 101)                                                                                        # диапазон цифр
+digit_for_seek = 2                                                                                              # искомая цифра
+
+check = bin_seek(digit_for_seek, diapazon)
+
+print()
+print("Test ok." if digit_for_seek == check[0] else "The test failed.")
+print(f"Число угадано с {check[-1]} попытки.")			
+		</pre>
+	</body>
+</html>
