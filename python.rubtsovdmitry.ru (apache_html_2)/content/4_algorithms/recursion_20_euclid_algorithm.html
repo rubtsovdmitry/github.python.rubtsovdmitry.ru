@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta name="Dmitry Rubtsov." content="Dmitry Rubtsov.">
+		<meta name="generator" content="Bluefish 2.2.14" >
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="../content.css">		
+		<title> 20. Алгоритм Евклида. Найти наибольший общий делитель. </title>		
+	</head>
+	<body>
+		<h1> 20. <span class="span_green"> Алгоритм Евклида. </span> Найти наибольший общий делитель. </h1>
+		<div> <a class="link_task" href="./recursion_20_euclid_algorithm.html" target="_blank"> (открыть в новой вкладке) </a> </div>
+		<hr>
+		<div> 
+			<span> Условие: </span> <br>
+			<hr>
+			<div>			
+			Нужно найти наибольший общий делитель для двух чисел.
+			</div>						 
+		</div>		
+		<hr>
+		<div>
+			<span> Код: </span>
+		</div>
+		<hr>
+		<pre>
+def euclid(a, b):
+    if b == 0:                                                          # базовый случай, при котором одно из чисел равно 0
+        return a
+    result = euclid(b, a % b)                                           # при каждом уровне стека числа меняются местами, и одно число пересчитывается
+    return result
+
+while True:
+    try:
+        print()
+        a = int(input("%50s" % "Введите первое число: "))
+        break
+    except:
+        print("%49s" % "Вы ввели не число. Попробуйте ещё раз.")
+
+while True:
+    try:
+        print()
+        b = int(input("%50s" % "Введите второе число: "))
+        break
+    except:
+        print("%49s" % "Вы ввели не число. Попробуйте ещё раз.")
+
+result = euclid(a, b)
+print()
+print("%49s" % "Наибольший общий делитель равен:", result)
+print()		
+		</pre>
+	</body>
+</html>
