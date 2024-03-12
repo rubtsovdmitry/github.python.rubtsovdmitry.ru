@@ -4,7 +4,9 @@ hr { width: 99%; margin-left: auto; margin-right: auto; margin-top: 15px; margin
 .div_destination { font-size: 31px; text-align: center; background-color: #caff63; }
 nav { border: 1px dotted gray; width: 24.5%; height: 2250px; margin-left: 0.5%; float: left; background-color: #ffd09b; }
 .ul_empty { list-style-type: square; font-size: 21px; font-weight: bold; }
+.ul_empty2 { list-style-type: square; font-size: 21px; font-weight: bold; color: blue; }
 a { color: #2e2e2e; font-weight: normal; font-size: 19px; text-decoration: none; font-style: italic; }
+.a_class { color: blue; }
 .list_task { border: 1px dotted gray; width: 74%; height: 2250px; margin-left: 0.5%; }
 .git { color: black; font-weight: bold; font-size: 31px; }
 nav hr { width: 95%; margin-right: 1px; }
